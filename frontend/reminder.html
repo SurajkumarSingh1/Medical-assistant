@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediAssist - Medicine Reminders</title>
+
+    <link rel="stylesheet" href="css/reminder.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR
+         DO NOT CHANGE
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <!-- ================= LOGO ================= -->
+
+        <div class="logo-area">
+
+            <div class="logo-circle">
+                ✚
+            </div>
+
+            <span>
+                Medi<span>Assist</span>
+            </span>
+
+        </div>
+
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav class="sidebar-nav">
+
+            <!-- Dashboard -->
+
+            <a href="dashboard.html">
+
+                🏠
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- AI Chat -->
+
+            <a href="chat.html">
+
+                💬
+
+                <span>
+                    AI Chat
+                </span>
+
+            </a>
+
+
+            <!-- Symptom Checker -->
+
+            <a href="symptom-checker.html">
+
+                🩺
+
+                <span>
+                    Symptom Checker
+                </span>
+
+            </a>
+            <!-- Report Scanner -->
+            <a href="report-scanner.html">
+                <span>📄</span>
+                <span>Report Scanner</span>
+            </a>
+            <a href="period-care.html">
+
+    <span class="nav-icon">🌸</span>
+
+    <span>Period Care</span>
+
+</a>
+
+
+            <!-- History -->
+
+            <a href="history.html">
+
+                🕘
+
+                <span>
+                    History
+                </span>
+
+            </a>
+
+
+            <!-- Reminders -->
+
+            <a
+                href="reminder.html"
+                class="active"
+            >
+
+                ⏰
+
+                <span>
+                    Reminders
+                </span>
+
+            </a>
+
+
+            <!-- Health Tools -->
+
+            <a href="health-tools.html">
+
+                🧰
+
+                <span>
+                    Health Tools
+                </span>
+
+            </a>
+
+
+            <!-- Profile -->
+
+            <a href="profile.html">
+
+                👤
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+            <!-- Settings -->
+
+            <a href="settings.html">
+
+                ⚙️
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- Emergency -->
+
+            <a href="emergency.html">
+
+                🚨
+
+                <span>
+                    Emergency
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- ================= LOGOUT ================= -->
+
+        <div
+            class="logout"
+            id="logoutBtn"
+        >
+
+            🚪
+
+            <span>
+                Logout
+            </span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div class="page-heading">
+
+                <div class="page-title-row">
+
+                    <div class="title-pill">
+                        💊
+                    </div>
+
+                    <div>
+
+                        <h1>
+                            Medicine Reminders
+                        </h1>
+
+                        <p>
+                            Stay on track with your medications for a healthier you
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MOTIVATION ================= -->
+
+            <div class="health-message">
+
+                <div class="health-message-icon">
+                    ♡
+                </div>
+
+                <div>
+
+                    <strong>
+                        "Small steps lead to big health changes."
+                    </strong>
+
+                    <span>
+                        Take your medicines on time.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= USER AREA ================= -->
+
+            <div class="profile-mini">
+
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="avatar">
+                    👩
+                </div>
+
+                <span id="userName">
+                    User
+                </span>
+
+                <span class="profile-arrow">
+                    ▾
+                </span>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             STATUS / STATISTICS CARDS
+        ====================================================== -->
+
+        <section class="stats-grid">
+
+
+            <!-- CURRENT TIME -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    🕐
+                </div>
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Current Time
+                    </span>
+
+                    <strong
+                        id="currentTime"
+                        class="stat-value"
+                    >
+                        Loading...
+                    </strong>
+
+                    <small id="currentDate">
+                        Today
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALARM STATUS -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    🔔
+                </div>
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Alarm Status
+                    </span>
+
+                    <strong
+                        id="alarmStatus"
+                        class="stat-value green-text"
+                    >
+                        Active
+                    </strong>
+
+                    <small>
+                        Medicine reminders are checked automatically
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon pink">
+                    🔔
+                </div>
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Notifications
+                    </span>
+
+                    <strong
+                        id="notificationStatus"
+                        class="stat-value pink-text"
+                    >
+                        Enabled
+                    </strong>
+
+                    <small>
+                        You'll get notified on time
+                    </small>
+
+                </div>
+
+                <button
+                    id="enableNotifications"
+                    type="button"
+                    class="hidden-notification-button"
+                >
+                    Enable
+                </button>
+
+            </div>
+
+
+            <!-- TOTAL REMINDERS -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    📅
+                </div>
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Total Reminders
+                    </span>
+
+                    <strong
+                        id="totalReminders"
+                        class="stat-value purple-text"
+                    >
+                        0
+                    </strong>
+
+                    <small>
+                        Stay consistent!
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             REMINDER CONTENT
+        ====================================================== -->
+
+        <section class="reminder-container">
+
+
+            <!-- =================================================
+                 ADD MEDICINE REMINDER
+            ================================================== -->
+
+            <div class="reminder-form-card">
+
+
+                <!-- CARD HEADER -->
+
+                <div class="card-header">
+
+                    <div class="card-title-icon">
+                        +
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Add Medicine Reminder
+                        </h2>
+
+                        <p>
+                            Fill in the details to set a new reminder.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= FORM ================= -->
+
+                <form id="reminderForm">
+
+
+                    <!-- MEDICINE NAME -->
+
+                    <div class="form-group">
+
+                        <label for="medicineName">
+                            💊 Medicine Name
+                            <span class="required-star">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="medicineName"
+                            name="medicineName"
+                            placeholder="Enter medicine name"
+                            required
+                        >
+
+                        <small>
+                            Example: Paracetamol
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- DOSAGE -->
+
+                    <div class="form-group">
+
+                        <label for="dosage">
+                            💉 Dosage
+                            <span class="required-star">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="dosage"
+                            name="dosage"
+                            placeholder="Example: 500 mg"
+                            required
+                        >
+
+                        <small>
+                            Enter the prescribed dosage
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- DATE + TIME -->
+
+                    <div class="form-row">
+
+
+                        <!-- DATE -->
+
+                        <div class="form-group">
+
+                            <label for="date">
+
+                                🗓️ Date
+
+                                <span class="required-star">
+                                    *
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="date"
+                                id="date"
+                                name="date"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- TIME -->
+
+                        <div class="form-group">
+
+                            <label for="time">
+
+                                ⏰ Time
+
+                                <span class="required-star">
+                                    *
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="time"
+                                id="time"
+                                name="time"
+                                required
+                            >
+
+                            <small>
+                                Select time for reminder
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- NOTES -->
+
+                    <div class="form-group">
+
+                        <label for="notes">
+                            📝 Notes
+                            <span class="optional-text">
+                                Optional
+                            </span>
+                        </label>
+
+                        <textarea
+                            id="notes"
+                            name="notes"
+                            rows="3"
+                            placeholder="Example: Take after food"
+                        ></textarea>
+
+                        <small>
+                            Add any special instructions
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="add-reminder-btn"
+                    >
+
+                        <span>
+                            🔔
+                        </span>
+
+                        Add Reminder
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 YOUR REMINDERS
+            ================================================== -->
+
+            <div class="reminders-card">
+
+
+                <!-- HEADER -->
+
+                <div class="reminders-header">
+
+                    <div class="reminders-heading">
+
+                        <div class="reminder-title-icon">
+                            ⏰
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Your Reminders
+                            </h2>
+
+                            <p id="reminderCount">
+                                0 reminders
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SEARCH + FILTER AREA -->
+
+                    <div class="reminder-actions">
+
+                        <div class="search-box">
+
+                            <span>
+                                🔍
+                            </span>
+
+                            <input
+                                type="text"
+                                id="reminderSearch"
+                                placeholder="Search medicines..."
+                            >
+
+                        </div>
+
+
+                        <select
+                            id="reminderFilter"
+                            class="reminder-filter"
+                        >
+
+                            <option value="all">
+                                All
+                            </option>
+
+                            <option value="today">
+                                Today
+                            </option>
+
+                            <option value="upcoming">
+                                Upcoming
+                            </option>
+
+                        </select>
+
+
+                        <button
+                            class="refresh-btn"
+                            id="refreshBtn"
+                            type="button"
+                        >
+                            🔄
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= REMINDER LIST ================= -->
+
+                <div
+                    class="reminders-list"
+                    id="remindersList"
+                >
+
+
+                    <!-- EMPTY STATE -->
+
+                    <div
+                        class="empty-state"
+                        id="emptyState"
+                    >
+
+                        <div class="empty-illustration">
+
+                            <div class="calendar-illustration">
+
+                                <div class="calendar-top"></div>
+
+                                <div class="calendar-body">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+                                <div class="clock-illustration">
+                                    ⏰
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <h3>
+                            No medicine reminders yet
+                        </h3>
+
+                        <p>
+                            Add your first medicine reminder to stay on track
+                            with your health.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="empty-add-btn"
+                            onclick="document.getElementById('medicineName').focus()"
+                        >
+
+                            <span>
+                                ＋
+                            </span>
+
+                            Add Your First Reminder
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             HEALTH TIP
+        ====================================================== -->
+
+        <div class="health-tip">
+
+            <div class="tip-left">
+
+                <span class="tip-icon">
+                    💡
+                </span>
+
+                <strong>
+                    Tip:
+                </strong>
+
+                <span>
+                    Set reminders for all your important medicines
+                    and try to take them at the same time each day.
+                </span>
+
+            </div>
+
+            <span class="tip-right">
+                "Consistency today, better health tomorrow."
+            </span>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             DISCLAIMER
+        ====================================================== -->
+
+        <div class="disclaimer">
+
+            <span class="disclaimer-icon">
+                ⚠️
+            </span>
+
+            <span>
+                MediAssist provides general health information and is
+                not a substitute for professional medical advice,
+                diagnosis or treatment.
+            </span>
+
+        </div>
+
+
+    </main>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="js/reminder.js"></script>
+
+
+<!-- =====================================================
+     REMINDER PAGE UI HELPERS
+====================================================== -->
+
+<script>
+
+    /* =====================================================
+       SHOW TODAY'S DATE
+    ===================================================== */
+
+    function updateReminderDate() {
+
+        const dateElement =
+            document.getElementById("currentDate");
+
+        if (!dateElement) {
+            return;
+        }
+
+        const today = new Date();
+
+        dateElement.textContent =
+            today.toLocaleDateString(
+                "en-IN",
+                {
+                    weekday: "long",
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                }
+            );
+    }
+
+
+    /* =====================================================
+       UPDATE TOTAL REMINDERS
+       
+       Gets the real number of reminders from the backend.
+    ===================================================== */
+
+    async function updateTotalReminders() {
+
+        const totalElement =
+            document.getElementById("totalReminders");
+
+        const countElement =
+            document.getElementById("reminderCount");
+
+        if (!totalElement) {
+            return;
+        }
+
+
+        /* -----------------------------------------------
+           FIRST: try the visible reminder count
+        ------------------------------------------------ */
+
+        if (countElement) {
+
+            const countText =
+                countElement.textContent || "";
+
+            const match =
+                countText.match(/\d+/);
+
+            if (match) {
+
+                const visibleCount =
+                    parseInt(
+                        match[0],
+                        10
+                    );
+
+                totalElement.textContent =
+                    visibleCount;
+
+                /*
+                 * If the visible count is greater than 0,
+                 * we already have the correct value.
+                 */
+                if (visibleCount > 0) {
+                    return;
+                }
+            }
+        }
+
+
+        /* -----------------------------------------------
+           SECOND: get the real data from backend
+        ------------------------------------------------ */
+
+        const token =
+            localStorage.getItem("token");
+
+        if (!token) {
+
+            totalElement.textContent = "0";
+
+            return;
+        }
+
+
+        try {
+
+            const API_BASE_URL =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1"
+        ? "http://localhost:5000"
+        : "";
+
+            const response =
+                await fetch(
+                    `${API_BASE_URL}/api/reminders`,
+                    {
+                        method: "GET",
+
+                        headers: {
+                            "Authorization":
+                                `Bearer ${token}`,
+
+                            "Content-Type":
+                                "application/json"
+                        }
+                    }
+                );
+
+
+            if (!response.ok) {
+
+                console.warn(
+                    "Could not load reminder count."
+                );
+
+                return;
+            }
+
+
+            const data =
+                await response.json();
+
+
+            console.log(
+                "Reminder count response:",
+                data
+            );
+
+
+            /* -------------------------------------------
+               SUPPORT DIFFERENT BACKEND RESPONSE FORMATS
+            -------------------------------------------- */
+
+            let reminders = null;
+
+
+            if (
+                Array.isArray(data)
+            ) {
+
+                reminders = data;
+
+            }
+
+            else if (
+                Array.isArray(data.reminders)
+            ) {
+
+                reminders =
+                    data.reminders;
+
+            }
+
+            else if (
+                Array.isArray(data.data)
+            ) {
+
+                reminders =
+                    data.data;
+
+            }
+
+            else if (
+                Array.isArray(data.results)
+            ) {
+
+                reminders =
+                    data.results;
+
+            }
+
+
+            /* -------------------------------------------
+               UPDATE TOTAL
+            -------------------------------------------- */
+
+            if (
+                Array.isArray(reminders)
+            ) {
+
+                totalElement.textContent =
+                    reminders.length;
+
+
+                /*
+                 * Also keep the small "Your Reminders"
+                 * count synchronized.
+                 */
+                if (countElement) {
+
+                    countElement.textContent =
+                        reminders.length === 1
+                            ? "1 reminder"
+                            : `${reminders.length} reminders`;
+                }
+
+                return;
+            }
+
+
+            /* -------------------------------------------
+               SOME BACKENDS RETURN A DIRECT COUNT
+            -------------------------------------------- */
+
+            const possibleCount =
+                data.count ??
+                data.total ??
+                data.totalReminders;
+
+
+            if (
+                typeof possibleCount === "number"
+            ) {
+
+                totalElement.textContent =
+                    possibleCount;
+
+                if (countElement) {
+
+                    countElement.textContent =
+                        possibleCount === 1
+                            ? "1 reminder"
+                            : `${possibleCount} reminders`;
+                }
+
+                return;
+            }
+
+
+        }
+        catch (error) {
+
+            console.error(
+                "Error loading reminder count:",
+                error
+            );
+
+        }
+    }
+
+
+    /* =====================================================
+       INITIALIZE PAGE
+    ===================================================== */
+
+    updateReminderDate();
+
+    updateTotalReminders();
+
+
+    /* =====================================================
+       KEEP TOTAL SYNCHRONIZED
+       
+       Your existing reminder.js can update the reminder
+       list after adding/deleting/refreshing. This watches
+       for those DOM changes and updates the top card.
+    ===================================================== */
+
+    const remindersList =
+        document.getElementById("remindersList");
+
+
+    if (remindersList) {
+
+        const observer =
+            new MutationObserver(
+                function () {
+
+                    updateTotalReminders();
+
+                }
+            );
+
+
+        observer.observe(
+            remindersList,
+            {
+                childList: true,
+                subtree: true
+            }
+        );
+    }
+
+
+    /* =====================================================
+       ALSO CHECK PERIODICALLY
+       
+       This catches changes made by reminder.js that do not
+       trigger a visible DOM mutation immediately.
+    ===================================================== */
+
+    setInterval(
+        updateTotalReminders,
+        2000
+    );
+
+
+    /* =====================================================
+       AFTER ADDING A REMINDER
+       
+       Wait for the existing reminder.js to finish its
+       POST request, then update the total.
+    ===================================================== */
+
+    const reminderForm =
+        document.getElementById("reminderForm");
+
+
+    if (reminderForm) {
+
+        reminderForm.addEventListener(
+            "submit",
+            function () {
+
+                /*
+                 * Give reminder.js time to complete the
+                 * request and update the page.
+                 */
+                setTimeout(
+                    updateTotalReminders,
+                    1500
+                );
+
+                setTimeout(
+                    updateTotalReminders,
+                    3000
+                );
+
+            }
+        );
+    }
+
+
+    /* =====================================================
+       REFRESH BUTTON
+    ===================================================== */
+
+    const refreshBtn =
+        document.getElementById("refreshBtn");
+
+
+    if (refreshBtn) {
+
+        refreshBtn.addEventListener(
+            "click",
+            function () {
+
+                setTimeout(
+                    updateTotalReminders,
+                    500
+                );
+
+                setTimeout(
+                    updateTotalReminders,
+                    1500
+                );
+
+            }
+        );
+    }
+
+
+    console.log(
+        "MediAssist reminder counter initialized successfully."
+    );
+
+</script>
+
+
+</body>
+
+</html>

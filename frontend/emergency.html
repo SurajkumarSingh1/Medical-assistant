@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediAssist - Emergency</title>
+
+    <link rel="stylesheet" href="css/emergency.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo-area">
+            <div class="logo-circle">✚</div>
+
+            <span>
+                Medi<span>Assist</span>
+            </span>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <!-- Dashboard -->
+            <a href="dashboard.html">
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <!-- AI Chat -->
+            <a href="chat.html">
+                <span>💬</span>
+                <span>AI Chat</span>
+            </a>
+
+            <!-- Symptom Checker -->
+            <a href="symptom-checker.html">
+                <span>🩺</span>
+                <span>Symptom Checker</span>
+            </a>
+
+            <!-- Report Scanner -->
+            <a href="report-scanner.html">
+                <span>📄</span>
+                <span>Report Scanner</span>
+            </a>
+            <a href="period-care.html">
+
+    <span class="nav-icon">🌸</span>
+
+    <span>Period Care</span>
+
+</a>
+
+            <!-- History -->
+            <a href="history.html">
+                <span>🕘</span>
+                <span>History</span>
+            </a>
+
+            <!-- Reminders -->
+            <a href="reminders.html">
+                <span>⏰</span>
+                <span>Reminders</span>
+            </a>
+
+            <!-- Health Tools -->
+            <a href="health-tools.html">
+                <span>🧰</span>
+                <span>Health Tools</span>
+            </a>
+
+            <!-- Profile -->
+            <a href="profile.html">
+                <span>👤</span>
+                <span>Profile</span>
+            </a>
+
+            <!-- Settings -->
+            <a href="settings.html">
+                <span>⚙️</span>
+                <span>Settings</span>
+            </a>
+
+            <!-- Emergency -->
+            <a href="emergency.html" class="active">
+                <span>🚨</span>
+                <span>Emergency</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Logout -->
+        <div class="logout" id="logoutBtn">
+            🚪
+            <span>Logout</span>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h1>Emergency Assistance</h1>
+
+                <p>
+                    Quick access to emergency help
+                </p>
+            </div>
+
+            <div class="profile-mini">
+
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="avatar">
+                    👤
+                </div>
+
+                <span id="userName">
+                    User
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= WARNING ================= -->
+
+        <section class="emergency-warning">
+
+            <div class="warning-icon">
+                🚨
+            </div>
+
+            <div>
+                <h2>Emergency Situation?</h2>
+
+                <p>
+                    If you are in immediate danger or have a
+                    serious medical emergency, contact local
+                    emergency services immediately.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- ================= EMERGENCY BUTTONS ================= -->
+
+        <section class="emergency-grid">
+
+            <!-- Medical Emergency -->
+            <div class="emergency-card">
+
+                <div class="card-icon">
+                    🚑
+                </div>
+
+                <h3>Medical Emergency</h3>
+
+                <p>
+                    Call emergency medical services.
+                </p>
+
+                <button
+                    class="emergency-btn"
+                    onclick="callEmergency()"
+                >
+                    📞 Call Emergency
+                </button>
+
+            </div>
+
+
+            <!-- Find Hospital -->
+            <div class="emergency-card">
+
+                <div class="card-icon">
+                    🏥
+                </div>
+
+                <h3>Find Hospital</h3>
+
+                <p>
+                    Find nearby hospitals using your location.
+                </p>
+
+                <button
+                    class="normal-btn"
+                    onclick="findHospital()"
+                >
+                    🏥 Find Nearby Hospital
+                </button>
+
+            </div>
+
+
+            <!-- Police Assistance -->
+            <div class="emergency-card">
+
+                <div class="card-icon">
+                    👮
+                </div>
+
+                <h3>Police Assistance</h3>
+
+                <p>
+                    Contact police services in an emergency.
+                </p>
+
+                <button
+                    class="emergency-btn"
+                    onclick="callPolice()"
+                >
+                    📞 Call Police
+                </button>
+
+            </div>
+
+
+            <!-- Share Location -->
+            <div class="emergency-card">
+
+                <div class="card-icon">
+                    📍
+                </div>
+
+                <h3>Share My Location</h3>
+
+                <p>
+                    Get your current location to share with someone.
+                </p>
+
+                <button
+                    class="normal-btn"
+                    onclick="shareLocation()"
+                >
+                    📍 Share Location
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SAFETY TIPS ================= -->
+
+        <div class="emergency-layout">
+
+            <!-- Left Side -->
+            <div class="emergency-content">
+
+                <section class="safety-tips">
+
+                    <h2>⚠️ Emergency Safety Tips</h2>
+
+                    <ul>
+
+                        <li>
+                            Stay calm and move to a safe place if possible.
+                        </li>
+
+                        <li>
+                            Contact appropriate emergency services.
+                        </li>
+
+                        <li>
+                            Share your location with a trusted person.
+                        </li>
+
+                        <li>
+                            Do not ignore severe or rapidly worsening symptoms.
+                        </li>
+
+                        <li>
+                            Follow instructions from trained emergency personnel.
+                        </li>
+
+                    </ul>
+
+                </section>
+
+            </div>
+
+
+            <!-- Right Side Image -->
+            <div class="health-image">
+
+                <img
+                    src="images/health-tips.jpg"
+                    alt="Healthy lifestyle and wellness"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= DISCLAIMER ================= -->
+
+        <div class="disclaimer">
+
+            ⚠️
+            MediAssist provides general health information.
+            In a life-threatening emergency, contact emergency
+            services or a qualified healthcare professional.
+
+        </div>
+
+    </main>
+
+
+    <script src="js/emergency.js"></script>
+
+</body>
+
+</html>

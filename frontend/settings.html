@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MediAssist - Settings</title>
+
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/common.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <!-- LOGO -->
+
+        <div class="logo-area">
+
+            <div class="logo-circle">
+                ✚
+            </div>
+
+            <span>
+                Medi<span>Assist</span>
+            </span>
+
+        </div>
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav class="sidebar-nav">
+
+            <!-- DASHBOARD -->
+
+            <a href="dashboard.html">
+
+                <span class="nav-icon">
+                    🏠
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- AI CHAT -->
+
+            <a href="chat.html">
+
+                <span class="nav-icon">
+                    💬
+                </span>
+
+                <span>
+                    AI Chat
+                </span>
+
+            </a>
+
+
+            <!-- SYMPTOM CHECKER -->
+
+            <a href="symptom-checker.html">
+
+                <span class="nav-icon">
+                    🩺
+                </span>
+
+                <span>
+                    Symptom Checker
+                </span>
+
+            </a>
+            <!-- Report Scanner -->
+            <a href="report-scanner.html">
+                <span>📄</span>
+                <span>Report Scanner</span>
+            </a>
+            <a href="period-care.html">
+
+    <span class="nav-icon">🌸</span>
+
+    <span>Period Care</span>
+
+</a>
+
+
+            <!-- HISTORY -->
+
+            <a href="history.html">
+
+                <span class="nav-icon">
+                    🕘
+                </span>
+
+                <span>
+                    History
+                </span>
+
+            </a>
+
+
+            <!-- REMINDERS -->
+
+            <a href="reminder.html">
+
+                <span class="nav-icon">
+                    ⏰
+                </span>
+
+                <span>
+                    Reminders
+                </span>
+
+            </a>
+
+
+            <!-- HEALTH TOOLS -->
+
+            <a href="health-tools.html">
+
+                <span class="nav-icon">
+                    🧰
+                </span>
+
+                <span>
+                    Health Tools
+                </span>
+
+            </a>
+
+
+            <!-- PROFILE -->
+
+            <a href="profile.html">
+
+                <span class="nav-icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a
+                href="settings.html"
+                class="active"
+            >
+
+                <span class="nav-icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- EMERGENCY -->
+
+            <a href="emergency.html">
+
+                <span class="nav-icon">
+                    🚨
+                </span>
+
+                <span>
+                    Emergency
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             LOGOUT
+        ================================================== -->
+
+        <div
+            class="logout"
+            id="logoutBtn"
+        >
+
+            <span class="nav-icon">
+                🚪
+            </span>
+
+            <span>
+                Logout
+            </span>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+                    Settings
+                </h1>
+
+                <p>
+                    Manage your MediAssist preferences
+                </p>
+
+            </div>
+
+
+            <!-- USER AREA -->
+
+            <div class="profile-mini">
+
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="avatar">
+                    👤
+                </div>
+
+                <span id="userName">
+                    User
+                </span>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             SETTINGS
+        ================================================== -->
+
+        <section class="settings-container">
+
+
+            <!-- =================================================
+                 NOTIFICATIONS
+            ================================================== -->
+
+            <div class="settings-card">
+
+                <div class="settings-icon">
+                    🔔
+                </div>
+
+
+                <div class="settings-content">
+
+                    <h2>
+                        Notifications
+                    </h2>
+
+                    <p>
+                        Receive notifications and reminders
+                        from MediAssist.
+                    </p>
+
+                </div>
+
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="notificationToggle"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DARK MODE
+            ================================================== -->
+
+            <div class="settings-card">
+
+                <div class="settings-icon">
+                    🌙
+                </div>
+
+
+                <div class="settings-content">
+
+                    <h2>
+                        Dark Mode
+                    </h2>
+
+                    <p>
+                        Switch between light and dark
+                        appearance.
+                    </p>
+
+                </div>
+
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="darkModeToggle"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CHANGE PASSWORD
+            ================================================== -->
+
+            <div class="settings-card">
+
+                <div class="settings-icon">
+                    🔐
+                </div>
+
+
+                <div class="settings-content">
+
+    <h2>
+        Change Password
+    </h2>
+
+    <p>
+        Update your account password.
+    </p>
+
+</div>
+
+<button
+    type="button"
+    class="change-password-btn"
+    onclick="changePassword()"
+>
+    Change Password
+</button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ACCOUNT
+            ================================================== -->
+
+            <div class="settings-card">
+
+                <div class="settings-icon">
+                    👤
+                </div>
+
+
+                <div class="settings-content">
+
+                    <h2>
+                        Account
+                    </h2>
+
+                    <p>
+                        Your MediAssist account is currently
+                        active.
+                    </p>
+
+                    <span class="status">
+                        ● Account Active
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 APPLICATION VERSION
+            ================================================== -->
+
+            <div class="settings-card">
+
+                <div class="settings-icon">
+                    ℹ️
+                </div>
+
+
+                <div class="settings-content">
+
+                    <h2>
+                        About MediAssist
+                    </h2>
+
+                    <p>
+                        AI-powered health information and
+                        guidance assistant.
+                    </p>
+
+                    <span class="version">
+                        Version 1.0.0
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             DISCLAIMER
+        ================================================== -->
+
+        <div class="disclaimer">
+
+            ⚠️
+
+            MediAssist provides general educational
+            health information only. It does not replace
+            professional medical advice, diagnosis, or
+            treatment.
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>

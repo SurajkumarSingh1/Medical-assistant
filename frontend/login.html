@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - MediAssist</title>
+
+    <link rel="stylesheet" href="css/auth.css">
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <!-- ================= LEFT SIDE ================= -->
+        <section class="medical-side">
+
+            <div class="medical-content">
+
+                <!-- Logo -->
+                <div class="brand">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+
+                    <span>Medi<span>Assist</span></span>
+                </div>
+
+                <h1>
+                    Your Health,<br>
+                    <span>Smarter.</span>
+                </h1>
+
+                <p class="brand-description">
+                    Your personal AI medical assistant for everyday
+                    health guidance, symptom checking and reminders.
+                </p>
+
+                <!-- Medical Illustration -->
+                <div class="medical-illustration">
+
+                    <!-- Phone -->
+                    <div class="phone">
+                        <div class="phone-top"></div>
+
+                        <div class="phone-screen">
+
+                            <div class="medical-cross">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+
+                            <div class="health-line">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="phone-card">
+                                <i class="fa-solid fa-user-doctor"></i>
+                                <div></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Doctor -->
+                    <div class="doctor">
+
+                        <div class="doctor-head">
+                            <div class="hair"></div>
+                            <div class="face"></div>
+                        </div>
+
+                        <div class="doctor-body">
+                            <div class="coat"></div>
+                            <div class="shirt"></div>
+                        </div>
+
+                        <div class="doctor-arm"></div>
+
+                    </div>
+
+                    <!-- Stethoscope -->
+                    <div class="stethoscope">
+                        <div class="stetho-circle one"></div>
+                        <div class="stetho-circle two"></div>
+                        <div class="stetho-line"></div>
+                    </div>
+
+                    <!-- Floating medical cards -->
+
+                    <div class="float-card patient-card">
+                        <i class="fa-solid fa-user"></i>
+                        <div>
+                            <small>Patient</small>
+                            <strong>Healthy</strong>
+                        </div>
+                    </div>
+
+                    <div class="float-card ai-card">
+                        <i class="fa-solid fa-robot"></i>
+                        <div>
+                            <small>MediAssist AI</small>
+                            <strong>Online</strong>
+                        </div>
+                    </div>
+
+                    <div class="heartbeat-card">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <div class="heartbeat-line"></div>
+                    </div>
+
+                    <!-- Pills -->
+                    <div class="pill pill-one"></div>
+                    <div class="pill pill-two"></div>
+
+                    <!-- Temperature -->
+                    <div class="temperature">
+                        <i class="fa-solid fa-temperature-half"></i>
+                        <span>36.6°</span>
+                    </div>
+
+                </div>
+
+                <!-- Features -->
+                <div class="features">
+
+                    <div class="feature">
+                        <i class="fa-solid fa-robot"></i>
+                        <span>AI Medical Chat</span>
+                    </div>
+
+                    <div class="feature">
+                        <i class="fa-solid fa-stethoscope"></i>
+                        <span>Symptom Checker</span>
+                    </div>
+
+                    <div class="feature">
+                        <i class="fa-solid fa-bell"></i>
+                        <span>Health Reminders</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RIGHT SIDE ================= -->
+        <section class="login-side">
+
+            <div class="login-card">
+
+                <!-- Security Icon -->
+                <div class="security-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+
+                <div class="login-heading">
+                    <span>Hello,</span>
+                    <h2>Welcome Back</h2>
+                </div>
+
+                <p class="login-subtitle">
+                    Sign in to continue to your MediAssist account.
+                </p>
+
+
+                <!-- Login Form -->
+                <form id="loginForm">
+
+                    <!-- Email -->
+                    <div class="input-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword"
+                                aria-label="Show password"
+                            >
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Remember + Forgot -->
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                            >
+
+                            <span class="custom-checkbox"></span>
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                        <a href="#" id="forgotPassword">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- Error Message -->
+                    <div
+                        id="errorMessage"
+                        class="message error-message"
+                    ></div>
+
+
+                    <!-- Login Button -->
+                    <button
+                        type="submit"
+                        class="login-button"
+                        id="loginButton"
+                    >
+                        <span>LOGIN NOW</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+
+                <!-- Register -->
+                <div class="register-text">
+
+                    <span>Don't have an account?</span>
+
+                    <a href="register.html">
+                        Create Account
+                    </a>
+
+                </div>
+
+
+                <!-- Security Note -->
+                <div class="security-note">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span>
+                        Your account information is securely protected.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="js/login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MediAssist - Dashboard</title>
+
+
+    <!-- Existing CSS -->
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/common.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🩺
+            </div>
+
+            <span>
+                Medi<span>Assist</span>
+            </span>
+
+        </div>
+
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav class="top-nav">
+
+            <a
+                href="dashboard.html"
+                class="active"
+            >
+                Home
+            </a>
+
+
+            <a href="chat.html">
+                AI Chat
+            </a>
+
+
+            <a href="symptom-checker.html">
+                Symptom Checker
+            </a>
+
+
+            <a href="period-care.html">
+
+                <span class="nav-icon">
+                    🌸
+                </span>
+
+                <span>
+                    Period Care
+                </span>
+
+            </a>
+
+
+            <a href="history.html">
+                History
+            </a>
+
+
+            <a href="reminder.html">
+                Reminders
+            </a>
+
+        </nav>
+
+
+        <!-- ================= USER ================= -->
+
+        <div class="header-right">
+
+            <div class="user-info">
+
+                <div class="avatar">
+
+                    <img
+                        src="images/doctor.png"
+                        alt="Profile"
+                        onerror="this.style.display='none'"
+                    >
+
+                </div>
+
+                <span id="userName">
+                    User
+                </span>
+
+            </div>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+                type="button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="small-label">
+                    🩺 AI-Powered Healthcare
+                </div>
+
+
+                <h1>
+
+                    Your AI
+
+                    <span>
+                        Medical
+                    </span>
+
+                    Assistant
+
+                </h1>
+
+
+                <p>
+
+                    Get instant health answers, symptom analysis,
+                    home remedies and general medicine suggestions
+                    with AI.
+
+                </p>
+
+
+                <div class="medical-note">
+
+                    ⚠️ Not a substitute for professional medical advice.
+
+                </div>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="chat.html"
+                        class="primary-btn"
+                    >
+                        Get Started
+                    </a>
+
+
+                    <a
+                        href="#features"
+                        class="secondary-btn"
+                    >
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= DOCTOR IMAGE ================= -->
+
+            <div class="hero-image">
+
+                <div class="circle-bg"></div>
+
+
+                <div class="medical-floating chat-float">
+                    💬
+                </div>
+
+
+                <div class="medical-floating pulse-float">
+                    ❤️
+                </div>
+
+
+                <div class="medical-floating plus-float">
+                    +
+                </div>
+
+
+                <img
+                    src="images/3 doctor.png"
+                    alt="MediAssist Doctor"
+                    class="doctor-image"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             NEARBY DOCTORS
+        ====================================================== -->
+
+        <section
+            class="nearby-doctors-section"
+            id="nearby-doctors"
+        >
+
+
+            <!-- ================= SECTION HEADER ================= -->
+
+            <div class="nearby-header">
+
+                <div>
+
+                    <div class="small-label">
+                        📍 Healthcare Near You
+                    </div>
+
+
+                    <h2>
+
+                        Nearby
+                        <span>
+                            Doctors
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Find doctors, clinics and hospitals
+                        near your location.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= SEARCH BOX ================= -->
+
+            <div class="doctor-search-box">
+
+
+                <!-- LOCATION INPUT -->
+
+                <div class="location-input-wrapper">
+
+                    <span class="location-icon">
+                        📍
+                    </span>
+
+
+                    <input
+                        type="text"
+                        id="doctorLocation"
+                        placeholder="Enter city or location e.g. Ranchi, Jharkhand"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+
+                <!-- SEARCH BUTTON -->
+
+                <button
+                    type="button"
+                    id="searchDoctorsBtn"
+                    class="doctor-search-btn"
+                >
+
+                    🔍 Search Doctors
+
+                </button>
+
+
+
+                <!-- CURRENT LOCATION -->
+
+                <button
+                    type="button"
+                    id="currentLocationBtn"
+                    class="current-location-btn"
+                >
+
+                    📌 Use My Location
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= SEARCH STATUS ================= -->
+
+            <div
+                id="doctorSearchStatus"
+                class="doctor-search-status"
+                style="display: none;"
+            ></div>
+
+
+
+            <!-- ================= DOCTOR RESULTS ================= -->
+
+            <div
+                id="doctorResults"
+                class="doctor-results"
+            >
+
+
+                <!-- INITIAL EMPTY STATE -->
+
+                <div class="doctor-empty-state">
+
+                    <div class="empty-icon">
+                        🩺
+                    </div>
+
+
+                    <h3>
+                        Find a Doctor Near You
+                    </h3>
+
+
+                    <p>
+
+                        Enter your city or use your current
+                        location to find nearby healthcare
+                        facilities.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FEATURES
+        ====================================================== -->
+
+        <section
+            class="features-section"
+            id="features"
+        >
+
+
+            <!-- ================= FEATURE 1 ================= -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon blue">
+                    🩺
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        AI Symptom Analysis
+                    </h3>
+
+
+                    <p>
+
+                        Get possible conditions based on
+                        your symptoms.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= FEATURE 2 ================= -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon red">
+                    ❤️
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Home Remedies
+                    </h3>
+
+
+                    <p>
+
+                        Natural and safe home remedy tips
+                        for common problems.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= FEATURE 3 ================= -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon purple">
+                    💊
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Medicine Suggestions
+                    </h3>
+
+
+                    <p>
+
+                        General OTC medicine information
+                        and suggestions.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= FEATURE 4 ================= -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon pink">
+                    💙
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Health Knowledge
+                    </h3>
+
+
+                    <p>
+
+                        Learn about diseases, prevention
+                        and healthcare.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section
+            class="info-section"
+            id="about"
+        >
+
+            <h2>
+                About MediAssist
+            </h2>
+
+
+            <p>
+
+                MediAssist is your personal AI medical assistant
+                designed to provide general health information,
+                symptom guidance, reminders and useful healthcare
+                tools.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- ================= HELP ================= -->
+
+        <section
+            class="info-section"
+            id="contact"
+        >
+
+            <h2>
+                Need Help?
+            </h2>
+
+
+            <p>
+
+                Use the AI Medical Chat or explore the available
+                health tools for general health information.
+
+            </p>
+
+
+            <a
+                href="chat.html"
+                class="primary-btn"
+            >
+                Open AI Chat →
+            </a>
+
+        </section>
+
+
+
+        <!-- ================= DISCLAIMER ================= -->
+
+        <div class="disclaimer">
+
+            <span class="disclaimer-icon">
+                ⚠️
+            </span>
+
+
+            <span>
+
+                <strong>
+                    Medical Disclaimer:
+                </strong>
+
+
+                MediAssist provides general educational information
+                only. It is not a substitute for professional medical
+                advice, diagnosis, or treatment.
+
+            </span>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+
+    <!-- Existing Theme -->
+    <script src="js/theme.js"></script>
+
+
+    <!-- Existing Dashboard Functionality -->
+    <script src="js/dashboard.js"></script>
+
+
+    <!-- Nearby Doctors -->
+    <script src="js/nearby-doctors.js"></script>
+
+
+</body>
+
+</html>

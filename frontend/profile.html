@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MediAssist - Profile</title>
+
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/common.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo-area">
+
+            <div class="logo-circle">
+                ✚
+            </div>
+
+            <span>
+                Medi<span>Assist</span>
+            </span>
+
+        </div>
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav class="sidebar-nav">
+
+
+            <!-- DASHBOARD -->
+
+            <a href="dashboard.html">
+
+                <span class="nav-icon">
+                    🏠
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- AI CHAT -->
+
+            <a href="chat.html">
+
+                <span class="nav-icon">
+                    💬
+                </span>
+
+                <span>
+                    AI Chat
+                </span>
+
+            </a>
+
+
+            <!-- SYMPTOM CHECKER -->
+
+            <a href="symptom-checker.html">
+
+                <span class="nav-icon">
+                    🩺
+                </span>
+
+                <span>
+                    Symptom Checker
+                </span>
+
+            </a>
+            <!-- Report Scanner -->
+            <a href="report-scanner.html">
+                <span>📄</span>
+                <span>Report Scanner</span>
+            </a>
+            <a href="period-care.html">
+
+    <span class="nav-icon">🌸</span>
+
+    <span>Period Care</span>
+
+</a>
+
+
+            <!-- HISTORY -->
+
+            <a href="history.html">
+
+                <span class="nav-icon">
+                    🕘
+                </span>
+
+                <span>
+                    History
+                </span>
+
+            </a>
+
+
+            <!-- REMINDERS -->
+
+            <a href="reminder.html">
+
+                <span class="nav-icon">
+                    ⏰
+                </span>
+
+                <span>
+                    Reminders
+                </span>
+
+            </a>
+
+
+            <!-- HEALTH TOOLS -->
+
+            <a href="health-tools.html">
+
+                <span class="nav-icon">
+                    🧰
+                </span>
+
+                <span>
+                    Health Tools
+                </span>
+
+            </a>
+
+
+            <!-- PROFILE -->
+
+            <a
+                href="profile.html"
+                class="active"
+            >
+
+                <span class="nav-icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a href="settings.html">
+
+                <span class="nav-icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- EMERGENCY -->
+
+            <a href="emergency.html">
+
+                <span class="nav-icon">
+                    🚨
+                </span>
+
+                <span>
+                    Emergency
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- =================================================
+             LOGOUT
+        ================================================== -->
+
+        <div
+            class="logout"
+            id="logoutBtn"
+        >
+
+            <span>
+                🚪
+            </span>
+
+            <span>
+                Logout
+            </span>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOP BAR
+        ================================================== -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <h1>
+                    My Profile
+                </h1>
+
+                <p>
+                    Manage your personal information
+                </p>
+
+            </div>
+
+
+            <!-- TOP PROFILE -->
+
+            <div class="profile-mini">
+
+
+                <div class="notification">
+                    🔔
+                </div>
+
+
+                <div class="avatar">
+                    👤
+                </div>
+
+
+                <span id="topUserName">
+                    User
+                </span>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             PROFILE CONTENT
+        ================================================== -->
+
+        <section class="profile-container">
+
+
+            <!-- =================================================
+                 PROFILE HEADER
+            ================================================== -->
+
+            <div class="profile-card">
+
+
+                <div class="profile-avatar">
+                    👤
+                </div>
+
+
+                <div class="profile-title">
+
+
+                    <h2 id="profileName">
+                        User
+                    </h2>
+
+
+                    <p id="profileEmail">
+                        user@example.com
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PERSONAL INFORMATION
+            ================================================== -->
+
+            <div class="information-card">
+
+
+                <div class="card-header">
+
+
+                    <div>
+
+                        <h2>
+                            Personal Information
+                        </h2>
+
+                        <p>
+                            Update your account information
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PROFILE FORM -->
+
+                <form id="profileForm">
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="form-group">
+
+
+                        <label for="fullName">
+                            👤 Full Name
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+
+                        <label for="email">
+                            📧 Email Address
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+
+                        <label for="phone">
+                            📱 Phone Number
+                        </label>
+
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter your phone number"
+                        >
+
+
+                    </div>
+
+
+
+                    <!-- SAVE -->
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+
+                        💾 Save Changes
+
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ACCOUNT INFORMATION
+            ================================================== -->
+
+            <div class="account-card">
+
+
+                <h2>
+                    Account Information
+                </h2>
+
+
+
+                <!-- ACCOUNT STATUS -->
+
+                <div class="account-row">
+
+
+                    <span>
+                        Account Status
+                    </span>
+
+
+                    <strong class="active-status">
+                        ● Active
+                    </strong>
+
+
+                </div>
+
+
+
+                <!-- ACCOUNT EMAIL -->
+
+                <div class="account-row">
+
+
+                    <span>
+                        Account Email
+                    </span>
+
+
+                    <strong id="accountEmail">
+                        -
+                    </strong>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         PROFILE JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/profile.js"></script>
+
+
+    <!-- =====================================================
+         THEME LOADER
+         Applies saved Light/Dark mode before page appears
+    ====================================================== -->
+
+    <script>
+
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme) {
+            document.documentElement.setAttribute(
+                "data-theme",
+                savedTheme
+            );
+        }
+
+    </script>
+
+
+</body>
+
+</html>

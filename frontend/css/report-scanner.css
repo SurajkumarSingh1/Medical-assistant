@@ -1,0 +1,2052 @@
+/* =========================================================
+   MEDIASSIST - REPORT SCANNER
+   Modern Medical Report UI
+   Responsive - NOT A4 STYLE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1597e5;
+    --primary-dark: #0878c9;
+    --primary-light: #eaf6ff;
+
+    --sidebar: #082b52;
+    --sidebar-hover: #123d6d;
+
+    --bg: #f4f8fc;
+    --card: #ffffff;
+    --border: #dce7f2;
+
+    --text: #102a43;
+    --text-light: #60758a;
+    --muted: #8093a7;
+
+    --success: #18a96b;
+    --success-bg: #eafaf3;
+
+    --warning: #e9a400;
+    --warning-bg: #fff8e5;
+
+    --danger: #e5484d;
+    --danger-bg: #fff0f0;
+
+    --purple: #7357b8;
+    --purple-bg: #f4f0ff;
+
+    --shadow: 0 4px 18px rgba(20, 55, 90, 0.07);
+    --shadow-hover: 0 8px 25px rgba(20, 55, 90, 0.12);
+
+    --radius: 12px;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: var(--bg);
+    color: var(--text);
+
+    min-height: 100vh;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 268px;
+
+    background: var(--sidebar);
+
+    padding: 28px 16px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-area {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 14px;
+
+    margin-bottom: 35px;
+
+    color: #ffffff;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.logo-circle {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: var(--primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.logo-area span span {
+    color: #65c3ff;
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.sidebar-nav a,
+.logout {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    min-height: 45px;
+
+    padding: 10px 14px;
+
+    border-radius: 9px;
+
+    color: #dcecff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+    background: var(--sidebar-hover);
+    color: #ffffff;
+
+    transform: translateX(2px);
+}
+
+.sidebar-nav a.active {
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 15px rgba(21, 151, 229, 0.25);
+}
+
+.nav-icon {
+    width: 21px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout {
+    margin-top: auto;
+
+    color: #ff777d;
+
+    cursor: pointer;
+}
+
+.logout:hover {
+    background: rgba(255, 80, 90, 0.10);
+
+    color: #ff8b90;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+    margin-left: 268px;
+
+    min-height: 100vh;
+
+    padding: 32px 42px 50px;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+    max-width: 1080px;
+
+    margin: 0 auto 26px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.topbar h1 {
+    font-size: 26px;
+
+    line-height: 1.2;
+
+    color: var(--text);
+
+    margin-bottom: 6px;
+
+    font-weight: 750;
+}
+
+.topbar p {
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PROFILE MINI
+========================================================= */
+
+.profile-mini {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+.notification,
+.avatar {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    box-shadow: 0 2px 8px rgba(20, 55, 90, 0.04);
+}
+
+.avatar {
+    background: #eef5ff;
+}
+
+
+/* =========================================================
+   SCANNER CONTAINER
+========================================================= */
+
+.scanner-container {
+    width: 100%;
+
+    max-width: 1080px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   INTRO CARD
+========================================================= */
+
+.intro-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 20px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 14px;
+
+    box-shadow: var(--shadow);
+}
+
+.intro-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: var(--primary-light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+.intro-card h2 {
+    font-size: 17px;
+
+    margin-bottom: 3px;
+
+    color: var(--text);
+}
+
+.intro-card p {
+    color: var(--text-light);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   ANALYSIS CARD
+========================================================= */
+
+.analysis-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ANALYSIS HEADER
+========================================================= */
+
+.analysis-header {
+    padding: 18px 22px;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.analysis-header h2 {
+    font-size: 16px;
+
+    color: var(--text);
+
+    margin-bottom: 2px;
+}
+
+.analysis-header p {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   NEW ANALYSIS BUTTON
+========================================================= */
+
+.new-analysis-btn {
+    border: 1px solid var(--primary);
+
+    background: #ffffff;
+
+    color: var(--primary);
+
+    border-radius: 7px;
+
+    padding: 8px 14px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    white-space: nowrap;
+}
+
+.new-analysis-btn:hover {
+    background: var(--primary);
+
+    color: #ffffff;
+
+    box-shadow: 0 4px 12px rgba(21, 151, 229, 0.2);
+}
+
+
+/* =========================================================
+   UPLOAD AREA
+========================================================= */
+
+.upload-area {
+    margin: 16px;
+
+    min-height: 215px;
+
+    border: 1.5px dashed #b8d7f2;
+
+    border-radius: 10px;
+
+    background: #fbfdff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    transition: all 0.2s ease;
+}
+
+.upload-area:hover,
+.upload-area.dragging {
+    border-color: var(--primary);
+
+    background: #f5fbff;
+}
+
+.upload-area.scanning {
+    opacity: 0.75;
+
+    pointer-events: none;
+}
+
+.upload-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 12px;
+
+    background: #edf6ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.upload-area h3 {
+    font-size: 14px;
+
+    margin-bottom: 4px;
+
+    color: var(--text);
+}
+
+.upload-area > p {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    max-width: 500px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   FILE INPUT
+========================================================= */
+
+#reportFile {
+    display: none;
+}
+
+.choose-file-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    padding: 9px 17px;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.choose-file-btn:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 12px rgba(21, 151, 229, 0.2);
+}
+
+
+/* =========================================================
+   FILE NAME
+========================================================= */
+
+.file-name {
+    margin: 9px 0 10px !important;
+
+    font-size: 10px !important;
+
+    color: var(--text-light) !important;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   SCAN BUTTON
+========================================================= */
+
+.scan-btn {
+    border: none;
+
+    background: #10243e;
+
+    color: #ffffff;
+
+    border-radius: 7px;
+
+    padding: 9px 18px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.scan-btn:hover {
+    background: #17385e;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 14px rgba(16, 36, 62, 0.2);
+}
+
+.scan-btn:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   RESULT AREA
+========================================================= */
+
+.result-area {
+    margin: 16px;
+
+    padding: 28px 30px 35px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.result-area.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   SUCCESS / STATUS ICON
+========================================================= */
+
+.success-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    background: var(--success-bg);
+
+    color: var(--success);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 10px;
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   RESULT TITLE
+========================================================= */
+
+.result-area > h3:first-of-type {
+    text-align: center;
+
+    color: var(--text);
+
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+.result-area > p:first-of-type {
+    text-align: center;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    margin-bottom: 4px;
+}
+
+
+/* =========================================================
+   FILE INFORMATION
+========================================================= */
+
+.report-info {
+    width: min(100%, 560px);
+
+    margin: 18px auto 22px;
+
+    padding: 13px 17px;
+
+    background: #f8fbfe;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+}
+
+.report-info p {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 11px;
+
+    color: var(--text-light);
+
+    margin: 3px 0;
+}
+
+.report-info strong {
+    color: var(--text);
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.result-area hr {
+    border: none;
+
+    border-top: 1px solid #dce5ee;
+
+    margin: 22px 0 28px;
+}
+
+
+/* =========================================================
+   REPORT SECTIONS
+========================================================= */
+
+.result-area > h3 {
+    position: relative;
+
+    color: var(--text);
+
+    font-size: 17px;
+
+    font-weight: 750;
+
+    text-align: center;
+
+    margin-top: 27px;
+
+    margin-bottom: 9px;
+
+    line-height: 1.3;
+}
+
+.result-area > h3::after {
+    content: "";
+
+    display: block;
+
+    width: 38px;
+    height: 2px;
+
+    margin: 7px auto 0;
+
+    border-radius: 5px;
+
+    background: var(--primary);
+}
+
+
+/* =========================================================
+   GENERAL RESULT TEXT
+========================================================= */
+
+.result-area > p {
+    color: #425c75;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    margin: 0 auto 12px;
+
+    max-width: 900px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   REPORT TYPE
+========================================================= */
+
+.result-area > h3:nth-of-type(1) + p {
+    color: var(--primary);
+
+    font-weight: 600;
+
+    background: #f6fbff;
+
+    border: 1px solid #e1effa;
+
+    padding: 9px 14px;
+
+    border-radius: 7px;
+
+    width: fit-content;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   OVERALL STATUS
+========================================================= */
+
+.result-area > h3:nth-of-type(3) + p {
+    display: inline-block;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 7px 18px;
+
+    border-radius: 20px;
+
+    background: var(--success-bg);
+
+    color: var(--success);
+
+    border: 1px solid #c8efdd;
+
+    font-weight: 700;
+
+    font-size: 11px;
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   PATIENT INFORMATION
+========================================================= */
+
+.patient-info {
+    width: 100%;
+
+    margin: 12px auto 25px;
+
+    padding: 17px 20px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px 35px;
+
+    background: #f8fbfe;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+}
+
+.patient-info p {
+    font-size: 12px;
+
+    color: var(--text-light);
+}
+
+.patient-info strong {
+    color: var(--text);
+}
+
+
+/* =========================================================
+   TEST RESULTS TABLE
+========================================================= */
+
+.report-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    margin: 15px 0 25px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: #ffffff;
+}
+
+.report-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 720px;
+
+    font-size: 11px;
+}
+
+.report-table thead {
+    background: #eef6fd;
+}
+
+.report-table th {
+    padding: 12px 10px;
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    text-align: left;
+
+    border-bottom: 1px solid #cfdfed;
+}
+
+.report-table td {
+    padding: 12px 10px;
+
+    vertical-align: top;
+
+    color: #425c75;
+
+    line-height: 1.55;
+
+    border-bottom: 1px solid #edf2f7;
+}
+
+.report-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.report-table tbody tr:hover {
+    background: #f9fcff;
+}
+
+.report-table td strong {
+    color: var(--text);
+}
+
+
+/* =========================================================
+   STATUS COLUMN
+========================================================= */
+
+.report-table td:nth-child(5) {
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FINDINGS LISTS
+========================================================= */
+
+.result-area ul {
+    width: 100%;
+
+    max-width: 920px;
+
+    margin: 0 auto 16px;
+
+    padding: 0 0 0 22px;
+}
+
+.result-area li {
+    color: #425c75;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    margin-bottom: 7px;
+
+    padding-left: 4px;
+}
+
+.result-area li::marker {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   IMPORTANT FINDINGS
+========================================================= */
+
+.result-area h3 + ul {
+    background: #fffaf0;
+
+    border: 1px solid #f6e5bd;
+
+    border-radius: 8px;
+
+    padding: 14px 20px 14px 38px;
+}
+
+
+/* =========================================================
+   POSSIBLE EXPLANATIONS
+========================================================= */
+
+.result-area h3:nth-of-type(7) + ul {
+    background: #f8f6ff;
+
+    border: 1px solid #e5ddfa;
+
+    border-radius: 8px;
+
+    padding: 14px 20px 14px 38px;
+}
+
+
+/* =========================================================
+   NEXT STEPS
+========================================================= */
+
+.result-area h3:nth-of-type(9) + ul {
+    background: #f5fbff;
+
+    border: 1px solid #dceefa;
+
+    border-radius: 8px;
+
+    padding: 14px 20px 14px 38px;
+}
+
+
+/* =========================================================
+   WHEN TO SEEK HELP
+========================================================= */
+
+.result-area h3:nth-of-type(10) + ul {
+    background: var(--danger-bg);
+
+    border: 1px solid #f5d1d3;
+
+    border-radius: 8px;
+
+    padding: 14px 20px 14px 38px;
+}
+
+.result-area h3:nth-of-type(10) + ul li::marker {
+    color: var(--danger);
+}
+
+
+/* =========================================================
+   QUESTIONS FOR DOCTOR
+========================================================= */
+
+.result-area h3:nth-of-type(11) + ul {
+    background: #f8faff;
+
+    border: 1px solid #dfe8f5;
+
+    border-radius: 8px;
+
+    padding: 14px 20px 14px 38px;
+}
+
+
+/* =========================================================
+   ANALYSIS LIMITATIONS
+========================================================= */
+
+.result-area h3:nth-of-type(12) + ul {
+    background: #f7f8fa;
+
+    border: 1px solid #e1e5ea;
+
+    border-radius: 8px;
+
+    padding: 14px 20px 14px 38px;
+}
+
+
+/* =========================================================
+   DISCLAIMER INSIDE REPORT
+========================================================= */
+
+.result-area h3:last-of-type {
+    margin-top: 30px;
+}
+
+.result-area h3:last-of-type + p {
+    max-width: 850px;
+
+    background: #fffaf0;
+
+    border: 1px solid #f0dfb5;
+
+    border-radius: 8px;
+
+    padding: 13px 17px;
+
+    color: #6d5a32;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   MEDICAL DISCLAIMER OUTSIDE RESULT
+========================================================= */
+
+.disclaimer {
+    margin-top: 14px;
+
+    padding: 13px 16px;
+
+    border-radius: 8px;
+
+    border: 1px solid #f0dcae;
+
+    background: #fffaf0;
+
+    color: #6b5a37;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+
+    box-shadow: 0 2px 8px rgba(20, 55, 90, 0.03);
+}
+
+.disclaimer-icon {
+    flex-shrink: 0;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   LOADING STATE
+========================================================= */
+
+.result-area .success-icon:has(+ h3) {
+    animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.sidebar::-webkit-scrollbar,
+.report-table-wrapper::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+.report-table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.report-table-wrapper::-webkit-scrollbar-thumb {
+    background: #b9c9d8;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 225px;
+    }
+
+    .main-content {
+        margin-left: 225px;
+
+        padding: 28px 25px 40px;
+    }
+
+    .scanner-container,
+    .topbar {
+        max-width: 900px;
+    }
+
+    .patient-info {
+        gap: 10px 20px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: auto;
+
+        padding: 15px;
+
+        overflow: visible;
+    }
+
+    .logo-area {
+        margin-bottom: 15px;
+    }
+
+    .sidebar-nav {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 5px;
+    }
+
+    .sidebar-nav a,
+    .logout {
+        min-height: 40px;
+
+        padding: 8px 10px;
+
+        font-size: 12px;
+    }
+
+    .logout {
+        margin-top: 10px;
+    }
+
+    .main-content {
+        margin-left: 0;
+
+        padding: 20px 12px 35px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        margin-bottom: 18px;
+    }
+
+    .profile-mini {
+        align-self: flex-end;
+    }
+
+    .intro-card {
+        align-items: flex-start;
+
+        padding: 16px;
+    }
+
+    .analysis-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .new-analysis-btn {
+        align-self: flex-end;
+    }
+
+    .upload-area {
+        margin: 12px;
+
+        padding: 25px 15px;
+    }
+
+    .result-area {
+        margin: 12px;
+
+        padding: 22px 14px 28px;
+    }
+
+    .patient-info {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .result-area > h3 {
+        font-size: 16px;
+    }
+
+    .report-table {
+        min-width: 700px;
+    }
+
+    .disclaimer {
+        margin-top: 12px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .sidebar-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar h1 {
+        font-size: 22px;
+    }
+
+    .intro-card {
+        flex-direction: column;
+    }
+
+    .analysis-header {
+        padding: 15px;
+    }
+
+    .upload-area {
+        min-height: 200px;
+    }
+
+    .result-area {
+        padding: 18px 11px 25px;
+    }
+
+    .report-info {
+        padding: 11px;
+    }
+
+    .patient-info {
+        padding: 14px;
+    }
+
+    .result-area > p {
+        font-size: 11px;
+    }
+
+    .result-area li {
+        font-size: 11px;
+    }
+}
+
+
+/* =====================================================
+   REPORT SCANNING EFFECT
+===================================================== */
+
+.upload-area {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Scanning light line */
+.upload-area.scanning::after {
+    content: "";
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+
+    top: 0;
+
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #20c997,
+        #00a8ff,
+        #20c997,
+        transparent
+    );
+
+    box-shadow:
+        0 0 10px rgba(32, 201, 151, 0.8),
+        0 0 25px rgba(0, 168, 255, 0.6);
+
+    animation: reportScanLine 1.8s ease-in-out infinite;
+
+    z-index: 10;
+}
+
+
+/* Soft scanning glow */
+.upload-area.scanning::before {
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+
+    top: 0;
+
+    height: 90px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(32, 201, 151, 0.20),
+        rgba(32, 201, 151, 0.05),
+        transparent
+    );
+
+    animation: reportScanGlow 1.8s ease-in-out infinite;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+
+/* Moving scan line */
+@keyframes reportScanLine {
+
+    0% {
+        top: 0;
+        opacity: 0.3;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: calc(100% - 4px);
+        opacity: 0.3;
+    }
+
+}
+
+
+/* Moving glow */
+@keyframes reportScanGlow {
+
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        top: calc(100% - 90px);
+        opacity: 0;
+    }
+
+}
+
+
+/* Scanning content effect */
+.upload-area.scanning .upload-icon {
+    animation: scanningPulse 1s ease-in-out infinite;
+}
+
+
+@keyframes scanningPulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* Disable interaction while scanning */
+.upload-area.scanning {
+    pointer-events: none;
+}
+
+/* =========================================================
+   MEDIASSIST - MEDICAL REPORT SCANNING EFFECT
+   ========================================================= */
+
+/* Main scanning container */
+.scanning-preview {
+    width: 100%;
+    margin: 25px 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #eef3f8;
+    border: 1px solid #d9e5ef;
+    box-shadow: 0 10px 35px rgba(20, 60, 90, 0.08);
+}
+
+/* Hide before scanning starts */
+.scanning-preview.hidden {
+    display: none;
+}
+
+/* Document area */
+.scan-document {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(220, 230, 238, 0.45) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(220, 230, 238, 0.45) 1px,
+            transparent 1px
+        ),
+        #f4f8fb;
+
+    background-size: 25px 25px;
+}
+
+/* =========================================================
+   UPLOADED FILE PREVIEW
+   ========================================================= */
+
+.uploaded-preview {
+    position: relative;
+    width: 75%;
+    max-width: 850px;
+    height: 470px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+}
+
+/* Uploaded image */
+.uploaded-preview img {
+    max-width: 100%;
+    max-height: 470px;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.18);
+
+    background: white;
+}
+
+/* Uploaded PDF */
+.uploaded-preview iframe,
+.uploaded-preview embed {
+    width: 100%;
+    height: 470px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* Document file preview */
+.document-preview {
+    width: 360px;
+    min-height: 260px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.15);
+
+    padding: 30px;
+}
+
+.document-preview-icon {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 18px;
+
+    background: #edf5ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 42px;
+}
+
+.document-preview-name {
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #17324d;
+
+    text-align: center;
+
+    word-break: break-word;
+}
+
+/* =========================================================
+   SCAN OVERLAY
+   ========================================================= */
+
+.scan-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(32, 220, 180, 0.02),
+            rgba(32, 220, 180, 0.12),
+            rgba(32, 220, 180, 0.04)
+        );
+
+    animation: scanGlow 1.8s ease-in-out infinite;
+}
+
+/* =========================================================
+   MOVING SCAN LINE
+   ========================================================= */
+
+.scan-line {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: 0;
+
+    height: 4px;
+
+    z-index: 5;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        #8affed 15%,
+        #27e8c4 50%,
+        #8affed 85%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 6px #28e8c5,
+        0 0 18px #28e8c5,
+        0 0 40px rgba(39, 232, 196, 0.8);
+
+    animation: scanMove 2.4s linear infinite;
+}
+
+/* Glow around scanning line */
+.scan-line::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: 4px;
+
+    height: 100px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(38, 232, 195, 0.25),
+        rgba(38, 232, 195, 0.08),
+        transparent
+    );
+}
+
+/* =========================================================
+   SCANNING INFORMATION
+   ========================================================= */
+
+.scan-info {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 320px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background: rgba(8, 29, 48, 0.78);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    color: white;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* Scan icon */
+.scan-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 12px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(44, 232, 197, 0.15);
+
+    border: 1px solid rgba(44, 232, 197, 0.5);
+
+    font-size: 25px;
+
+    animation: scannerPulse 1.3s ease-in-out infinite;
+}
+
+/* Heading */
+.scan-info h2 {
+    margin: 5px 0;
+
+    font-size: 22px;
+
+    color: white;
+}
+
+/* Status text */
+.scan-info p {
+    margin: 6px 0 18px;
+
+    font-size: 14px;
+
+    color: #c8d7e4;
+}
+
+/* =========================================================
+   CIRCULAR PROGRESS
+   ========================================================= */
+
+.scan-progress-circle {
+    width: 82px;
+    height: 82px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background:
+        conic-gradient(
+            #31e8c4 0deg,
+            #31e8c4 0deg,
+            rgba(255, 255, 255, 0.15) 0deg
+        );
+}
+
+/* Inner circle */
+.scan-progress-circle::before {
+    content: "";
+
+    position: absolute;
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+
+    background: #102d43;
+}
+
+/* Percentage */
+.scan-progress-circle span {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: white;
+}
+
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
+
+.scan-progress-bar {
+    width: 100%;
+
+    height: 6px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    overflow: hidden;
+
+    margin-bottom: 12px;
+}
+
+#scanProgressFill {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        #1fcdb0,
+        #63f3d8
+    );
+
+    box-shadow:
+        0 0 10px rgba(49, 232, 196, 0.8);
+
+    transition: width 0.3s ease;
+}
+
+/* Small text */
+.scan-small-text {
+    font-size: 11px;
+
+    color: #aec2d1;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes scanMove {
+
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: calc(100% - 4px);
+    }
+
+    100% {
+        top: 0;
+    }
+
+}
+
+@keyframes scanGlow {
+
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+
+}
+
+@keyframes scannerPulse {
+
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(49, 232, 196, 0);
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow:
+            0 0 25px rgba(49, 232, 196, 0.35);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(49, 232, 196, 0);
+    }
+
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .scan-document {
+        min-height: 420px;
+    }
+
+    .uploaded-preview {
+        width: 92%;
+        height: 380px;
+    }
+
+    .uploaded-preview img {
+        max-height: 380px;
+    }
+
+    .uploaded-preview iframe,
+    .uploaded-preview embed {
+        height: 380px;
+    }
+
+    .scan-info {
+        width: 260px;
+        padding: 20px;
+    }
+
+    .scan-info h2 {
+        font-size: 19px;
+    }
+
+}

@@ -1,0 +1,380 @@
+/* =========================================================
+   MEDIASSIST - COMMON SIDEBAR
+   MASTER SIDEBAR DESIGN
+   Reference: REPORT SCANNER
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+
+    width: 268px !important;
+    min-width: 268px !important;
+    max-width: 268px !important;
+
+    height: 100vh !important;
+
+    background: #082b52 !important;
+
+    padding: 28px 16px 20px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    z-index: 1000 !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    color: #ffffff !important;
+
+    flex-shrink: 0 !important;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.sidebar .logo-area {
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    padding: 0 14px !important;
+
+    margin: 0 0 35px 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 21px !important;
+    font-weight: 700 !important;
+
+    line-height: 1 !important;
+
+    flex-shrink: 0 !important;
+}
+
+.sidebar .logo-circle {
+    width: 34px !important;
+    height: 34px !important;
+
+    min-width: 34px !important;
+    max-width: 34px !important;
+
+    border-radius: 9px !important;
+
+    background: #ffffff !important;
+
+    color: #1597e5 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-size: 22px !important;
+    font-weight: 800 !important;
+
+    line-height: 1 !important;
+
+    flex-shrink: 0 !important;
+}
+
+.sidebar .logo-area > span {
+    color: #ffffff !important;
+
+    font-size: 21px !important;
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+}
+
+.sidebar .logo-area > span > span {
+    color: #65c3ff !important;
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+   ========================================================= */
+
+.sidebar .sidebar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 6px !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    flex-shrink: 0 !important;
+}
+
+.sidebar .sidebar-nav a {
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    min-height: 45px !important;
+    height: 45px !important;
+
+    padding: 10px 14px !important;
+
+    margin: 0 !important;
+
+    border-radius: 9px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 13px !important;
+
+    color: #dcecff !important;
+
+    background: transparent !important;
+
+    text-decoration: none !important;
+
+    font-family: inherit !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+
+    line-height: normal !important;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease !important;
+
+    flex-shrink: 0 !important;
+}
+
+
+/* =========================================================
+   NAV ICON
+   ========================================================= */
+
+.sidebar .nav-icon {
+    width: 21px !important;
+    min-width: 21px !important;
+    max-width: 21px !important;
+
+    height: 21px !important;
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-size: 16px !important;
+
+    line-height: 1 !important;
+
+    flex-shrink: 0 !important;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.sidebar .sidebar-nav a:hover {
+    background: #123d6d !important;
+
+    color: #ffffff !important;
+
+    transform: translateX(2px) !important;
+}
+
+
+/* =========================================================
+   ACTIVE PAGE
+   ========================================================= */
+
+.sidebar .sidebar-nav a.active {
+    background: #1597e5 !important;
+
+    color: #ffffff !important;
+
+    font-weight: 700 !important;
+
+    box-shadow:
+        0 5px 15px rgba(21, 151, 229, 0.25) !important;
+
+    transform: none !important;
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.sidebar .logout {
+    width: 100% !important;
+
+    min-height: 45px !important;
+    height: 45px !important;
+
+    padding: 10px 14px !important;
+
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+
+    border-radius: 9px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 13px !important;
+
+    color: #ff777d !important;
+
+    background: transparent !important;
+
+    text-decoration: none !important;
+
+    font-family: inherit !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+
+    line-height: normal !important;
+
+    cursor: pointer !important;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease !important;
+
+    flex-shrink: 0 !important;
+}
+
+.sidebar .logout:hover {
+    background: rgba(255, 80, 90, 0.10) !important;
+
+    color: #ff8b90 !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main-content {
+    margin-left: 268px !important;
+
+    width: calc(100% - 268px) !important;
+
+    min-height: 100vh !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   PREVENT PAGE CSS FROM CHANGING SIDEBAR WIDTH
+   ========================================================= */
+
+body > .sidebar,
+body > aside.sidebar {
+    width: 268px !important;
+    min-width: 268px !important;
+    max-width: 268px !important;
+}
+
+
+/* =========================================================
+   TABLET
+   Keep the same sidebar proportions until mobile.
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 268px !important;
+        min-width: 268px !important;
+        max-width: 268px !important;
+    }
+
+    .main-content {
+        margin-left: 268px !important;
+        width: calc(100% - 268px) !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .sidebar {
+        position: relative !important;
+
+        top: auto !important;
+        left: auto !important;
+        bottom: auto !important;
+
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+
+        padding: 15px !important;
+
+        overflow: visible !important;
+    }
+
+    .sidebar .logo-area {
+        margin-bottom: 15px !important;
+    }
+
+    .sidebar .sidebar-nav {
+        display: grid !important;
+
+        grid-template-columns: repeat(2, 1fr) !important;
+
+        gap: 5px !important;
+    }
+
+    .sidebar .sidebar-nav a {
+        min-height: 40px !important;
+        height: 40px !important;
+
+        padding: 8px 10px !important;
+
+        font-size: 12px !important;
+    }
+
+    .sidebar .logout {
+        min-height: 40px !important;
+        height: 40px !important;
+
+        margin-top: 10px !important;
+
+        padding: 8px 10px !important;
+
+        font-size: 12px !important;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+
+        width: 100% !important;
+    }
+}

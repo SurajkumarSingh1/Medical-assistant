@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MediAssist - Chat History</title>
+
+
+    <!-- HISTORY CSS -->
+
+    <link rel="stylesheet" href="css/history.css">
+    <link rel="stylesheet" href="css/common.css">
+
+
+    <!-- GLOBAL THEME CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/theme.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- ================= LOGO ================= -->
+
+        <div class="logo-area">
+
+            <div class="logo-circle">
+                ✚
+            </div>
+
+            <span>
+                Medi<span>Assist</span>
+            </span>
+
+        </div>
+
+
+
+        <!-- ================= SIDEBAR NAVIGATION ================= -->
+
+        <nav class="sidebar-nav">
+
+
+            <!-- Dashboard -->
+
+            <a href="dashboard.html">
+
+                🏠
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+
+            <!-- AI Chat -->
+
+            <a href="chat.html">
+
+                💬
+
+                <span>
+                    AI Chat
+                </span>
+
+            </a>
+
+
+
+            <!-- Symptom Checker -->
+
+            <a href="symptom-checker.html">
+
+                🩺
+
+                <span>
+                    Symptom Checker
+                </span>
+
+            </a>
+            <!-- Report Scanner -->
+            <a href="report-scanner.html">
+                <span>📄</span>
+                <span>Report Scanner</span>
+            </a>
+            <a href="period-care.html">
+
+    <span class="nav-icon">🌸</span>
+
+    <span>Period Care</span>
+
+</a>
+
+
+
+            <!-- History -->
+
+            <a
+                href="history.html"
+                class="active"
+            >
+
+                🕘
+
+                <span>
+                    History
+                </span>
+
+            </a>
+
+
+
+            <!-- Reminders -->
+
+            <a href="reminder.html">
+
+                ⏰
+
+                <span>
+                    Reminders
+                </span>
+
+            </a>
+
+
+
+            <!-- Health Tools -->
+
+            <a href="health-tools.html">
+
+                🧰
+
+                <span>
+                    Health Tools
+                </span>
+
+            </a>
+
+
+
+            <!-- Profile -->
+
+            <a href="profile.html">
+
+                👤
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+
+            <!-- Settings -->
+
+            <a href="settings.html">
+
+                ⚙️
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+
+            <!-- Emergency -->
+
+            <a href="emergency.html">
+
+                🚨
+
+                <span>
+                    Emergency
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- ================= LOGOUT ================= -->
+
+        <div
+            class="logout"
+            id="logoutBtn"
+        >
+
+            🚪
+
+            <span>
+                Logout
+            </span>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+
+        <!-- ================= TOP BAR ================= -->
+
+        <header class="topbar">
+
+
+            <!-- PAGE TITLE -->
+
+            <div>
+
+                <h1>
+                    Chat History
+                </h1>
+
+                <p>
+                    View your previous conversations with MediAssist AI
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= USER AREA ================= -->
+
+            <div class="profile-mini">
+
+
+                <!-- Notification -->
+
+                <div class="notification">
+                    🔔
+                </div>
+
+
+
+                <!-- Avatar -->
+
+                <div class="avatar">
+                    👩
+                </div>
+
+
+
+                <!-- Username -->
+
+                <span id="userName">
+                    User
+                </span>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =====================================================
+             HISTORY CONTENT
+        ====================================================== -->
+
+        <section class="history-container">
+
+
+
+            <!-- ================= HISTORY HEADER ================= -->
+
+            <div class="history-heading">
+
+
+                <div>
+
+                    <h2>
+                        Previous Conversations
+                    </h2>
+
+                    <p id="historyCount">
+                        Loading conversations...
+                    </p>
+
+                </div>
+
+
+
+                <!-- Refresh Button -->
+
+                <button
+                    class="refresh-btn"
+                    onclick="loadHistory()"
+                >
+
+                    🔄 Refresh
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SEARCH BOX
+            ================================================== -->
+
+            <div class="search-box">
+
+
+                <span>
+                    🔍
+                </span>
+
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search your conversations..."
+                    oninput="searchHistory()"
+                >
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 HISTORY LIST
+            ================================================== -->
+
+            <div
+                class="history-list"
+                id="historyList"
+            >
+
+
+                <!-- Loading message -->
+
+                <div class="loading">
+
+                    Loading your conversations...
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             DISCLAIMER
+        ====================================================== -->
+
+        <div class="disclaimer">
+
+
+            ⚠️
+
+
+            <span>
+
+                MediAssist provides general health information
+                and is not a substitute for professional medical
+                advice, diagnosis or treatment.
+
+            </span>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+
+    <!-- GLOBAL THEME -->
+
+    <script src="js/theme.js"></script>
+
+
+    <!-- HISTORY JAVASCRIPT -->
+
+    <script src="js/history.js"></script>
+
+
+</body>
+
+</html>

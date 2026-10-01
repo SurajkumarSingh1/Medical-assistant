@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MediAssist - Report Scanner</title>
+
+    <link rel="stylesheet" href="css/report-scanner.css">
+    <link rel="stylesheet" href="css/common.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <!-- LOGO -->
+
+        <div class="logo-area">
+
+            <div class="logo-circle">
+                ✚
+            </div>
+
+            <span>
+                Medi<span>Assist</span>
+            </span>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+
+                <span class="nav-icon">🏠</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="chat.html">
+
+                <span class="nav-icon">💬</span>
+
+                <span>AI Chat</span>
+
+            </a>
+
+
+            <a href="symptom-checker.html">
+
+                <span class="nav-icon">🩺</span>
+
+                <span>Symptom Checker</span>
+
+            </a>
+
+
+            <a
+                href="report-scanner.html"
+                class="active"
+            >
+
+                <span class="nav-icon">📄</span>
+
+                <span>Report Scanner</span>
+
+            </a>
+
+            <a href="period-care.html">
+
+    <span class="nav-icon">🌸</span>
+
+    <span>Period Care</span>
+
+</a>
+
+
+            <a href="history.html">
+
+                <span class="nav-icon">🕘</span>
+
+                <span>History</span>
+
+            </a>
+
+
+            <a href="reminder.html">
+
+                <span class="nav-icon">⏰</span>
+
+                <span>Reminders</span>
+
+            </a>
+
+
+            <a href="health-tools.html">
+
+                <span class="nav-icon">🧰</span>
+
+                <span>Health Tools</span>
+
+            </a>
+
+
+            <a href="profile.html">
+
+                <span class="nav-icon">👤</span>
+
+                <span>Profile</span>
+
+            </a>
+
+
+            <a href="settings.html">
+
+                <span class="nav-icon">⚙️</span>
+
+                <span>Settings</span>
+
+            </a>
+
+
+            <a href="emergency.html">
+
+                <span class="nav-icon">🚨</span>
+
+                <span>Emergency</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+
+        <a
+            href="login.html"
+            class="logout"
+            id="logoutBtn"
+            onclick="
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                localStorage.removeItem('mediassist_chat');
+            "
+        >
+
+            <span class="nav-icon">🚪</span>
+
+            <span>Logout</span>
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+                    Report Scanner
+                </h1>
+
+                <p>
+                    Upload and analyze your medical reports
+                </p>
+
+            </div>
+
+
+            <!-- USER -->
+
+            <div class="profile-mini">
+
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="avatar">
+                    👤
+                </div>
+
+                <span id="userName">
+                    User
+                </span>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <section class="scanner-container">
+
+
+            <!-- =================================================
+                 INTRO CARD
+            ================================================== -->
+
+            <div class="intro-card">
+
+                <div class="intro-icon">
+                    🔬
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        AI Medical Report Analysis
+                    </h2>
+
+                    <p>
+                        Upload a medical document or medical image
+                        and MediAssist will analyze it and provide
+                        an easy-to-understand explanation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ANALYSIS CARD
+            ================================================== -->
+
+            <div class="analysis-card">
+
+
+                <!-- CARD HEADER -->
+
+                <div class="analysis-header">
+
+                    <div>
+
+                        <h2>
+                            📊 Medical Report Analysis
+                        </h2>
+
+                        <p>
+                            AI-generated explanation
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="new-analysis-btn"
+                        id="newAnalysisBtn"
+                    >
+                        + New Analysis
+                    </button>
+
+                </div>
+
+
+
+                <!-- UPLOAD AREA -->
+
+                <div
+                    class="upload-area"
+                    id="uploadArea"
+                >
+
+                    <div class="upload-icon">
+                        📄
+                    </div>
+
+
+                    <h3>
+                        Upload Your Medical Report
+                    </h3>
+
+
+                    <p>
+                        Upload a blood report, PDF, X-Ray
+                        or medical image for AI-powered analysis.
+                    </p>
+
+
+                    <label
+                        for="reportFile"
+                        class="choose-file-btn"
+                    >
+                        Choose File
+                    </label>
+
+
+                    <input
+                        type="file"
+                        id="reportFile"
+                        accept=".pdf,.png,.jpg,.jpeg,.webp,.txt"
+                    >
+
+
+                    <p
+                        class="file-name"
+                        id="fileName"
+                    >
+                        No file selected
+                    </p>
+
+
+                    <button
+                        type="button"
+                        id="scanReportBtn"
+                        class="scan-btn"
+                    >
+                        🔍 Scan Report
+                    </button>
+
+                </div>
+                
+                <!-- SCANNING PREVIEW -->
+<div id="scanningPreview" class="scanning-preview hidden">
+
+    <div class="scan-document">
+
+        <!-- Uploaded image / PDF preview will appear here -->
+        <div id="uploadedPreview" class="uploaded-preview"></div>
+
+        <!-- Dark transparent scanning layer -->
+        <div class="scan-overlay"></div>
+
+        <!-- Moving scanning line -->
+        <div class="scan-line"></div>
+
+        <!-- Center scanning information -->
+        <div class="scan-info">
+
+            <div class="scan-icon">
+                🔬
+            </div>
+
+            <h2>Scanning Report...</h2>
+
+            <p id="scanStatus">
+                Reading medical document
+            </p>
+
+            <div class="scan-progress-circle">
+                <span id="scanPercentage">0%</span>
+            </div>
+
+            <div class="scan-progress-bar">
+                <div id="scanProgressFill"></div>
+            </div>
+
+            <span class="scan-small-text">
+                Please wait while MediAssist analyzes your report
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+                <!-- RESULT AREA -->
+
+                <div
+                    id="resultArea"
+                    class="result-area hidden"
+                >
+
+                    <div class="success-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        Report Scanned Successfully
+                    </h3>
+
+                    <p>
+                        Your file has been scanned successfully.
+                    </p>
+
+                    <p>
+                        MediAssist will provide an
+                        easy-to-understand explanation
+                        of the uploaded report.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DISCLAIMER
+            ================================================== -->
+
+            <div class="disclaimer">
+
+                <span class="disclaimer-icon">
+                    ⚠️
+                </span>
+
+                <span>
+                    <strong>Medical Disclaimer:</strong>
+                    MediAssist provides general educational
+                    health information and AI-assisted
+                    explanations. It does not diagnose diseases
+                    or replace professional medical advice,
+                    diagnosis or treatment.
+                </span>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/report-scanner.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MediAssist - AI Chat</title>
+
+
+    <!-- CHAT CSS -->
+
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/common.css">
+    >
+
+
+    <!-- GLOBAL THEME CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/theme.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo-area">
+
+            <div class="logo-circle">
+                ✚
+            </div>
+
+            <span>
+                Medi<span>Assist</span>
+            </span>
+
+        </div>
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav class="sidebar-nav">
+
+
+            <!-- DASHBOARD -->
+
+            <a href="dashboard.html">
+
+                <span class="nav-icon">
+                    🏠
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- AI CHAT -->
+
+            <a
+                href="chat.html"
+                class="active"
+            >
+
+                <span class="nav-icon">
+                    💬
+                </span>
+
+                <span>
+                    AI Chat
+                </span>
+
+            </a>
+
+
+            <!-- SYMPTOM CHECKER -->
+
+            <a href="symptom-checker.html">
+
+                <span class="nav-icon">
+                    🩺
+                </span>
+
+                <span>
+                    Symptom Checker
+                </span>
+
+            </a>
+            <!-- Report Scanner -->
+            <a href="report-scanner.html">
+                <span>📄</span>
+                <span>Report Scanner</span>
+            </a>
+
+            <a href="period-care.html">
+
+    <span class="nav-icon">🌸</span>
+
+    <span>Period Care</span>
+
+</a>
+
+
+            <!-- HISTORY -->
+
+            <a href="history.html">
+
+                <span class="nav-icon">
+                    🕘
+                </span>
+
+                <span>
+                    History
+                </span>
+
+            </a>
+
+
+            <!-- REMINDERS -->
+
+            <a href="reminder.html">
+
+                <span class="nav-icon">
+                    ⏰
+                </span>
+
+                <span>
+                    Reminders
+                </span>
+
+            </a>
+
+
+            <!-- HEALTH TOOLS -->
+
+            <a href="health-tools.html">
+
+                <span class="nav-icon">
+                    🧰
+                </span>
+
+                <span>
+                    Health Tools
+                </span>
+
+            </a>
+
+
+            <!-- PROFILE -->
+
+            <a href="profile.html">
+
+                <span class="nav-icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a href="settings.html">
+
+                <span class="nav-icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- EMERGENCY -->
+
+            <a href="emergency.html">
+
+                <span class="nav-icon">
+                    🚨
+                </span>
+
+                <span>
+                    Emergency
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- =================================================
+             LOGOUT
+        ================================================== -->
+
+        <a
+            href="login.html"
+            class="logout"
+            id="logoutBtn"
+            onclick="
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                localStorage.removeItem('mediassist_chat');
+            "
+        >
+
+            🚪
+
+            <span>
+                Logout
+            </span>
+
+        </a>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <h1>
+                    AI Medical Chat
+                </h1>
+
+                <p>
+                    Ask MediAssist general health questions
+                </p>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="profile-mini">
+
+
+                <div class="notification">
+                    🔔
+                </div>
+
+
+                <div class="avatar">
+                    👤
+                </div>
+
+
+                <span id="userName">
+                    User
+                </span>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             CHAT AREA
+        ================================================== -->
+
+        <section class="chat-container">
+
+
+            <!-- CHAT CARD -->
+
+            <div class="chat-card">
+
+
+                <!-- CHAT HEADER -->
+
+                <div class="chat-header">
+
+
+                    <div class="chat-header-left">
+
+
+                        <div class="chat-ai-icon">
+                            🩺
+                        </div>
+
+
+                        <div>
+
+                            <h2>
+                                MediAssist AI
+                            </h2>
+
+                            <p>
+                                General health information assistant
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="online-status">
+
+                        <span class="status-dot"></span>
+
+                        Online
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MESSAGES
+                ================================================== -->
+
+                <div
+                    class="chat-messages"
+                    id="chatMessages"
+                >
+
+
+                    <!-- DEFAULT AI MESSAGE -->
+
+                    <div class="message ai-message">
+
+
+                        <div class="message-avatar">
+                            🩺
+                        </div>
+
+
+                        <div class="message-content">
+
+
+                            <div class="message-name">
+                                MediAssist
+                            </div>
+
+
+                            <div class="message-bubble">
+
+                                Hello! 👋
+
+                                <br><br>
+
+                                I'm MediAssist, your general
+                                health information assistant.
+
+                                <br><br>
+
+                                How can I help you today?
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     TYPING INDICATOR
+                ================================================== -->
+
+                <div
+                    id="typingIndicator"
+                    class="typing-indicator hidden"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <small>
+                        MediAssist is typing...
+                    </small>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     INPUT AREA
+                ================================================== -->
+
+                <div class="chat-input-area">
+
+
+                    <textarea
+                        id="messageInput"
+                        rows="1"
+                        maxlength="2000"
+                        placeholder="Type your health question..."
+                    ></textarea>
+
+
+                    <button
+                        id="sendBtn"
+                        type="button"
+                    >
+
+                        <span>
+                            Send
+                        </span>
+
+                        ➤
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- CHARACTER COUNT -->
+
+                <div class="input-footer">
+
+                    <span>
+                        General health information only.
+                    </span>
+
+                    <span id="charCount">
+                        0 / 2000
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DISCLAIMER
+            ================================================== -->
+
+            <div class="medical-disclaimer">
+
+                ⚠️
+
+                <span>
+
+                    <strong>
+                        Medical Disclaimer:
+                    </strong>
+
+                    MediAssist provides general educational
+                    information only. It does not diagnose
+                    diseases or replace professional medical
+                    advice, diagnosis, or treatment.
+
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+
+    <!-- GLOBAL THEME - MUST LOAD FIRST -->
+
+    <script src="js/theme.js"></script>
+
+
+    <!-- CHAT JAVASCRIPT -->
+
+    <script src="js/chat.js"></script>
+
+
+</body>
+
+</html>

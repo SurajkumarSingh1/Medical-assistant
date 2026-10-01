@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MediAssist - Period Care</title>
+
+    <link
+        rel="stylesheet"
+        href="css/period-care.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <!-- LOGO -->
+
+        <div class="logo-area">
+
+            <div class="logo-circle">
+                ✚
+            </div>
+
+            <span>
+                Medi<span>Assist</span>
+            </span>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <span class="nav-icon">🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a href="chat.html">
+                <span class="nav-icon">💬</span>
+                <span>AI Chat</span>
+            </a>
+
+
+            <a href="symptom-checker.html">
+                <span class="nav-icon">🩺</span>
+                <span>Symptom Checker</span>
+            </a>
+
+
+            <a href="report-scanner.html">
+                <span class="nav-icon">📄</span>
+                <span>Report Scanner</span>
+            </a>
+
+
+            <!-- PERIOD CARE -->
+
+            <a
+                href="period-care.html"
+                class="active"
+            >
+                <span class="nav-icon">🌸</span>
+                <span>Period Care</span>
+            </a>
+
+
+            <a href="history.html">
+                <span class="nav-icon">🕘</span>
+                <span>History</span>
+            </a>
+
+
+            <a href="reminder.html">
+                <span class="nav-icon">⏰</span>
+                <span>Reminders</span>
+            </a>
+
+
+            <a href="health-tools.html">
+                <span class="nav-icon">🧰</span>
+                <span>Health Tools</span>
+            </a>
+
+
+            <a href="profile.html">
+                <span class="nav-icon">👤</span>
+                <span>Profile</span>
+            </a>
+
+
+            <a href="settings.html">
+                <span class="nav-icon">⚙️</span>
+                <span>Settings</span>
+            </a>
+
+
+            <a href="emergency.html">
+                <span class="nav-icon">🚨</span>
+                <span>Emergency</span>
+            </a>
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+
+        <a
+            href="login.html"
+            class="logout"
+            id="logoutBtn"
+        >
+            <span class="nav-icon">🚪</span>
+            <span>Logout</span>
+        </a>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+                    Period Care
+                </h1>
+
+                <p>
+                    Track your menstrual cycle and understand
+                    your cycle patterns
+                </p>
+
+            </div>
+
+
+            <div class="profile-mini">
+
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="avatar">
+                    👤
+                </div>
+
+                <span id="userName">
+                    User
+                </span>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE CONTAINER
+        ================================================== -->
+
+        <section class="period-container">
+
+
+            <!-- =================================================
+                 INTRO
+            ================================================== -->
+
+            <div class="intro-card">
+
+                <div class="intro-icon">
+                    🌸
+                </div>
+
+                <div>
+
+                    <h2>
+                        MediAssist Period Care
+                    </h2>
+
+                    <p>
+                        Track your cycle, symptoms, mood and flow
+                        in one place. Get estimated cycle dates
+                        and educational health information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+     CYCLE SETUP
+================================================== -->
+
+<div class="setup-card">
+
+    <!-- HEADING + HISTORY BUTTON -->
+    <div class="section-heading cycle-heading-row">
+
+        <div class="cycle-heading-left">
+            <h2>🩸 Set Up Your Cycle</h2>
+
+            <p>
+                Enter your cycle information to get estimated dates.
+            </p>
+        </div>
+
+
+        <button
+            type="button"
+            id="periodHistoryBtn"
+            class="period-history-btn"
+        >
+            📋 View History
+        </button>
+
+    </div>
+
+
+    <!-- CYCLE INPUTS -->
+    <div class="form-grid">
+
+
+        <!-- LAST PERIOD -->
+
+        <div class="form-group">
+
+            <label for="lastPeriod">
+                Last Period Start Date
+            </label>
+
+            <input
+                type="date"
+                id="lastPeriod"
+            >
+
+            <small>
+                Select the first day of your last period.
+            </small>
+
+        </div>
+
+
+        <!-- CYCLE LENGTH -->
+
+        <div class="form-group">
+
+            <label for="cycleLength">
+                Average Cycle Length
+            </label>
+
+            <input
+                type="number"
+                id="cycleLength"
+                min="21"
+                max="45"
+                value="28"
+                placeholder="28"
+            >
+
+            <small>
+                Usually between 21–45 days.
+            </small>
+
+        </div>
+
+
+        <!-- PERIOD DURATION -->
+
+        <div class="form-group">
+
+            <label for="periodDuration">
+                Period Duration
+            </label>
+
+            <input
+                type="number"
+                id="periodDuration"
+                min="1"
+                max="10"
+                value="5"
+                placeholder="5"
+            >
+
+            <small>
+                Number of days your period usually lasts.
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- CALCULATE BUTTON -->
+
+    <button
+        type="button"
+        id="calculateCycleBtn"
+        class="primary-btn"
+    >
+        Calculate My Cycle
+    </button>
+
+</div>
+
+<!-- =================================================
+     PERIOD HISTORY
+================================================== -->
+
+<div class="period-history-card">
+
+    <div
+        id="periodHistoryPanel"
+        class="history-panel"
+    >
+
+        <!-- CYCLE HISTORY -->
+
+        <div class="history-section-title">
+
+            <h3>
+                🩸 Cycle History
+            </h3>
+
+            <button
+                type="button"
+                id="clearCycleHistoryBtn"
+                class="clear-history-btn"
+            >
+                Clear Cycle History
+            </button>
+
+        </div>
+
+        <div
+            id="cycleHistoryList"
+            class="history-list"
+        >
+            <div class="history-empty">
+                No cycle history yet.
+                Calculate your cycle to save a record here.
+            </div>
+        </div>
+
+
+        <!-- DAILY HEALTH HISTORY -->
+
+        <div class="history-section-title">
+
+            <h3>
+                💢 Daily Health History
+            </h3>
+
+            <button
+                type="button"
+                id="clearTrackingHistoryBtn"
+                class="clear-history-btn"
+            >
+                Clear Health History
+            </button>
+
+        </div>
+
+        <div
+            id="trackingHistoryList"
+            class="history-list"
+        >
+            <div class="history-empty">
+                No daily health tracking saved yet.
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+            ================================================== -->
+
+            <div class="summary-grid">
+
+
+                <!-- CYCLE DAY -->
+
+                <div class="summary-card cycle-card">
+
+                    <div class="summary-icon">
+                        🩸
+                    </div>
+
+                    <div>
+
+                        <span class="summary-label">
+                            Current Cycle
+                        </span>
+
+                        <strong id="cycleDay">
+                            Day --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NEXT PERIOD -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <span class="summary-label">
+                            Next Period
+                        </span>
+
+                        <strong id="nextPeriod">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OVULATION -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        🥚
+                    </div>
+
+                    <div>
+
+                        <span class="summary-label">
+                            Estimated Ovulation
+                        </span>
+
+                        <strong id="ovulationDate">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FERTILE WINDOW -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        🌷
+                    </div>
+
+                    <div>
+
+                        <span class="summary-label">
+                            Fertile Window
+                        </span>
+
+                        <strong id="fertileWindow">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CALENDAR
+            ================================================== -->
+
+            <div class="calendar-card">
+
+                <div class="calendar-header">
+
+                    <button
+                        type="button"
+                        class="calendar-nav"
+                        id="prevMonth"
+                    >
+                        ‹
+                    </button>
+
+
+                    <h2 id="calendarTitle">
+                        September 2026
+                    </h2>
+
+
+                    <button
+                        type="button"
+                        class="calendar-nav"
+                        id="nextMonth"
+                    >
+                        ›
+                    </button>
+
+                </div>
+
+
+                <!-- LEGEND -->
+
+                <div class="calendar-legend">
+
+                    <span>
+                        <i class="legend-dot period-dot"></i>
+                        Period
+                    </span>
+
+                    <span>
+                        <i class="legend-dot fertile-dot"></i>
+                        Fertile Window
+                    </span>
+
+                    <span>
+                        <i class="legend-dot ovulation-dot"></i>
+                        Ovulation
+                    </span>
+
+                    <span>
+                        <i class="legend-dot today-dot"></i>
+                        Today
+                    </span>
+
+                </div>
+
+
+                <!-- CALENDAR -->
+
+                <div
+                    class="calendar"
+                    id="calendar"
+                >
+
+                    <!-- JavaScript will generate calendar -->
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SYMPTOM + MOOD + FLOW TRACKING
+            ================================================== -->
+
+            <div class="tracking-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            💢 Track Today's Health
+                        </h2>
+
+                        <p>
+                            Select anything you are experiencing today.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SYMPTOMS -->
+
+                <div class="tracking-section">
+
+                    <h3>
+                        Common Symptoms
+                    </h3>
+
+
+                    <div class="option-grid">
+
+                        <button
+                            type="button"
+                            class="symptom-option"
+                            data-value="Cramps"
+                        >
+                            🩸 Cramps
+                        </button>
+
+                        <button
+                            type="button"
+                            class="symptom-option"
+                            data-value="Headache"
+                        >
+                            🤕 Headache
+                        </button>
+
+                        <button
+                            type="button"
+                            class="symptom-option"
+                            data-value="Back Pain"
+                        >
+                            🦴 Back Pain
+                        </button>
+
+                        <button
+                            type="button"
+                            class="symptom-option"
+                            data-value="Bloating"
+                        >
+                            🎈 Bloating
+                        </button>
+
+                        <button
+                            type="button"
+                            class="symptom-option"
+                            data-value="Acne"
+                        >
+                            🌸 Acne
+                        </button>
+
+                        <button
+                            type="button"
+                            class="symptom-option"
+                            data-value="Fatigue"
+                        >
+                            😴 Fatigue
+                        </button>
+
+                        <button
+                            type="button"
+                            class="symptom-option"
+                            data-value="Nausea"
+                        >
+                            🤢 Nausea
+                        </button>
+
+                        <button
+                            type="button"
+                            class="symptom-option"
+                            data-value="Breast Tenderness"
+                        >
+                            💗 Breast Tenderness
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MOOD -->
+
+                <div class="tracking-section">
+
+                    <h3>
+                        😊 Mood
+                    </h3>
+
+
+                    <div class="option-grid mood-grid">
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-value="Happy"
+                        >
+                            😊 Happy
+                        </button>
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-value="Normal"
+                        >
+                            🙂 Normal
+                        </button>
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-value="Sad"
+                        >
+                            😔 Sad
+                        </button>
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-value="Irritated"
+                        >
+                            😡 Irritated
+                        </button>
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-value="Tired"
+                        >
+                            😴 Tired
+                        </button>
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-value="Anxious"
+                        >
+                            😰 Anxious
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FLOW -->
+
+                <div class="tracking-section">
+
+                    <h3>
+                        💧 Period Flow
+                    </h3>
+
+
+                    <div class="option-grid flow-grid">
+
+                        <button
+                            type="button"
+                            class="flow-option"
+                            data-value="Light"
+                        >
+                            💧 Light
+                        </button>
+
+                        <button
+                            type="button"
+                            class="flow-option"
+                            data-value="Medium"
+                        >
+                            💧 Medium
+                        </button>
+
+                        <button
+                            type="button"
+                            class="flow-option"
+                            data-value="Heavy"
+                        >
+                            💧 Heavy
+                        </button>
+
+                        <button
+                            type="button"
+                            class="flow-option"
+                            data-value="Very Heavy"
+                        >
+                            💧 Very Heavy
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    id="saveTrackingBtn"
+                    class="primary-btn save-btn"
+                >
+                    Save Today's Tracking
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 AI PERIOD ASSISTANT
+            ================================================== -->
+
+            <div class="ai-period-card">
+
+                <div class="ai-icon">
+                    🤖
+                </div>
+
+
+                <div class="ai-content">
+
+                    <h2>
+                        AI Period Assistant
+                    </h2>
+
+                    <p>
+                        Have questions about periods, cramps,
+                        symptoms, cycle changes or self-care?
+                        Ask MediAssist for general educational
+                        information.
+                    </p>
+
+
+                    <a
+                        href="chat.html"
+                        class="ai-btn"
+                    >
+                        Ask AI Assistant →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+<!-- =================================================
+     PCOS HEALTH COMPASS
+================================================== -->
+
+<div class="pcos-compass-launch-card">
+
+    <div class="pcos-launch-icon">
+        🌸
+    </div>
+
+    <div class="pcos-launch-content">
+
+        <h2>
+            PCOS - PCOD Health Compass
+        </h2>
+
+        <p>
+            Track your personal patterns, understand changes
+            and prepare useful information for your doctor visit.
+        </p>
+
+    </div>
+
+    <button
+        type="button"
+        id="openPCOSCompassBtn"
+        class="pcos-open-btn"
+    >
+        Open Health Compass →
+    </button>
+
+</div>
+
+
+<!-- =================================================
+     PCOS HEALTH COMPASS SECTION
+================================================== -->
+
+<section
+    id="pcosCompass"
+    class="pcos-compass-section"
+>
+
+    <!-- HEADER -->
+
+    <div class="pcos-compass-header">
+
+        <div>
+
+            <div class="pcos-title-row">
+
+                <span class="pcos-title-icon">
+                    🩷
+                </span>
+
+                <div>
+
+                    <h2>
+                        PCOS - PCOD Health Compass
+                    </h2>
+
+                    <p>
+                        Your personal pattern and health-history assistant
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            id="closePCOSCompassBtn"
+            class="pcos-close-btn"
+        >
+            ✕
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         TODAY'S CHECK-IN
+    ================================================== -->
+
+    <div class="pcos-box">
+
+        <div class="pcos-box-heading">
+
+            <div>
+
+                <h3>
+                    🌸 Today's Check-in
+                </h3>
+
+                <p>
+                    Record how you are feeling today.
+                </p>
+
+            </div>
+
+            <span class="pcos-step-badge">
+                1
+            </span>
+
+        </div>
+
+
+        <!-- PERIOD STATUS -->
+
+        <div class="pcos-form-group">
+
+            <label for="pcosPeriodStatus">
+                Period Status
+            </label>
+
+            <select id="pcosPeriodStatus">
+
+                <option value="">
+                    Select status
+                </option>
+
+                <option value="On Time">
+                    On Time
+                </option>
+
+                <option value="Late">
+                    Late
+                </option>
+
+                <option value="Very Late">
+                    Very Late
+                </option>
+
+                <option value="Not Applicable">
+                    Not Applicable
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- SYMPTOMS -->
+
+        <div class="pcos-form-group">
+
+            <label>
+                Symptoms
+            </label>
+
+            <div class="pcos-symptom-grid">
+
+                <label class="pcos-check-option">
+
+                    <input
+                        type="checkbox"
+                        class="pcos-symptom"
+                        value="Acne"
+                    >
+
+                    <span>
+                        🌸 Acne
+                    </span>
+
+                </label>
+
+
+                <label class="pcos-check-option">
+
+                    <input
+                        type="checkbox"
+                        class="pcos-symptom"
+                        value="Hair Fall"
+                    >
+
+                    <span>
+                        💇 Hair Fall
+                    </span>
+
+                </label>
+
+
+                <label class="pcos-check-option">
+
+                    <input
+                        type="checkbox"
+                        class="pcos-symptom"
+                        value="Excess Hair"
+                    >
+
+                    <span>
+                        ✨ Excess Hair
+                    </span>
+
+                </label>
+
+
+                <label class="pcos-check-option">
+
+                    <input
+                        type="checkbox"
+                        class="pcos-symptom"
+                        value="Fatigue"
+                    >
+
+                    <span>
+                        😴 Fatigue
+                    </span>
+
+                </label>
+
+
+                <label class="pcos-check-option">
+
+                    <input
+                        type="checkbox"
+                        class="pcos-symptom"
+                        value="Mood Changes"
+                    >
+
+                    <span>
+                        😊 Mood Changes
+                    </span>
+
+                </label>
+
+
+                <label class="pcos-check-option">
+
+                    <input
+                        type="checkbox"
+                        class="pcos-symptom"
+                        value="Cramps"
+                    >
+
+                    <span>
+                        🩸 Cramps
+                    </span>
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLEEP -->
+
+        <div class="pcos-two-column">
+
+            <div class="pcos-form-group">
+
+                <label for="pcosSleepHours">
+                    Sleep (hours)
+                </label>
+
+                <input
+                    type="number"
+                    id="pcosSleepHours"
+                    min="0"
+                    max="24"
+                    step="0.5"
+                    placeholder="Example: 7.5"
+                >
+
+            </div>
+
+
+            <!-- STRESS -->
+
+            <div class="pcos-form-group">
+
+                <label for="pcosStressLevel">
+                    Stress Level
+                </label>
+
+                <select id="pcosStressLevel">
+
+                    <option value="">
+                        Select stress
+                    </option>
+
+                    <option value="Low">
+                        Low
+                    </option>
+
+                    <option value="Moderate">
+                        Moderate
+                    </option>
+
+                    <option value="High">
+                        High
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTIVITY -->
+
+        <div class="pcos-form-group">
+
+            <label for="pcosActivityLevel">
+                Physical Activity
+            </label>
+
+            <select id="pcosActivityLevel">
+
+                <option value="">
+                    Select activity
+                </option>
+
+                <option value="Low">
+                    Low
+                </option>
+
+                <option value="Moderate">
+                    Moderate
+                </option>
+
+                <option value="High">
+                    High
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="generatePCOSInsightBtn"
+            class="pcos-primary-btn"
+        >
+            Generate Health Insight
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         PERSONAL PATTERN / INSIGHT
+    ================================================== -->
+
+    <div
+        class="pcos-box pcos-insight-box"
+        id="pcosInsightBox"
+        style="display:none;"
+    >
+
+        <div class="pcos-box-heading">
+
+            <div>
+
+                <h3>
+                    🧭 Personal Pattern Analysis
+                </h3>
+
+                <p>
+                    Based on your own recorded information.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="pcosHealthOverview"
+            class="pcos-health-overview"
+        >
+        </div>
+
+
+        <!-- WHAT CHANGED -->
+
+        <div class="pcos-change-card">
+
+            <div class="pcos-change-title">
+
+                <span>
+                    🔄
+                </span>
+
+                <strong>
+                    What Changed?
+                </strong>
+
+            </div>
+
+            <div
+                id="pcosWhatChanged"
+                class="pcos-change-content"
+            >
+            </div>
+
+        </div>
+
+
+        <!-- INSIGHT -->
+
+        <div class="pcos-main-insight">
+
+            <div class="pcos-insight-icon">
+                💡
+            </div>
+
+            <div>
+
+                <h4>
+                    Your Personal Insight
+                </h4>
+
+                <p id="pcosInsightText">
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- WHY -->
+
+        <button
+            type="button"
+            id="pcosWhyBtn"
+            class="pcos-secondary-btn"
+        >
+            💡 Why am I seeing this?
+        </button>
+
+
+        <div
+            id="pcosWhyBox"
+            class="pcos-why-box"
+            style="display:none;"
+        >
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ASK MY HEALTH HISTORY
+    ================================================== -->
+
+    <div class="pcos-box">
+
+        <div class="pcos-box-heading">
+
+            <div>
+
+                <h3>
+                    💬 Ask My Health History
+                </h3>
+
+                <p>
+                    Ask questions about information you have recorded.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="pcos-question-buttons">
+
+            <button
+                type="button"
+                data-pcos-question="cycle"
+            >
+                📅 When was my cycle most irregular?
+            </button>
+
+
+            <button
+                type="button"
+                data-pcos-question="symptoms"
+            >
+                🩷 Which symptoms did I report?
+            </button>
+
+
+            <button
+                type="button"
+                data-pcos-question="sleep"
+            >
+                😴 How has my sleep changed?
+            </button>
+
+
+            <button
+                type="button"
+                data-pcos-question="stress"
+            >
+                🧠 How has my stress changed?
+            </button>
+
+
+            <button
+                type="button"
+                data-pcos-question="activity"
+            >
+                🏃 How has my activity changed?
+            </button>
+
+        </div>
+
+
+        <div
+            id="pcosHistoryAnswer"
+            class="pcos-history-answer"
+        >
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         PERSONAL HEALTH TIMELINE
+    ================================================== -->
+
+    <div class="pcos-box">
+
+        <div class="pcos-box-heading">
+
+            <div>
+
+                <h3>
+                    📅 Personal Health Timeline
+                </h3>
+
+                <p>
+                    Your recorded check-ins over time.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="pcosTimeline"
+            class="pcos-timeline"
+        >
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         DOCTOR VISIT SUMMARY
+    ================================================== -->
+
+    <div class="pcos-box">
+
+        <div class="pcos-box-heading">
+
+            <div>
+
+                <h3>
+                    🩺 Doctor Visit Summary
+                </h3>
+
+                <p>
+                    Create a concise summary from your recorded information.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="generateDoctorSummaryBtn"
+            class="pcos-primary-btn"
+        >
+            Generate Doctor Summary
+        </button>
+
+
+        <div
+            id="pcosDoctorSummary"
+            class="pcos-doctor-summary"
+            style="display:none;"
+        >
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         MEDICAL NOTE
+    ================================================== -->
+
+    <div class="pcos-medical-note">
+
+        ⚠️ This feature summarizes information you have recorded.
+        It does not diagnose PCOS/PCOD or establish a medical cause.
+        Persistent or concerning changes should be discussed with
+        a qualified healthcare professional.
+
+    </div>
+
+</section>
+
+
+
+            <!-- =================================================
+                 SELF CARE
+            ================================================== -->
+
+            <div class="self-care-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            🧘 Period Self-Care
+                        </h2>
+
+                        <p>
+                            General comfort and wellness suggestions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="care-grid">
+
+
+                    <div class="care-item">
+
+                        <div class="care-icon">
+                            🔥
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                For Cramps
+                            </h3>
+
+                            <p>
+                                Gentle movement, rest and a warm
+                                heating pad may help with comfort.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="care-item">
+
+                        <div class="care-icon">
+                            💧
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Stay Hydrated
+                            </h3>
+
+                            <p>
+                                Drink enough fluids throughout the
+                                day and listen to your body's needs.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="care-item">
+
+                        <div class="care-icon">
+                            😴
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Get Enough Rest
+                            </h3>
+
+                            <p>
+                                Adequate sleep and regular rest can
+                                support overall wellbeing.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="care-item">
+
+                        <div class="care-icon">
+                            🥗
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Balanced Meals
+                            </h3>
+
+                            <p>
+                                Choose regular, balanced meals with
+                                a variety of nutritious foods.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DISCLAIMER
+            ================================================== -->
+
+            <div class="disclaimer">
+
+                <span class="disclaimer-icon">
+                    ⚠️
+                </span>
+
+                <div>
+
+                    <strong>
+                        Health Information Disclaimer
+                    </strong>
+
+                    <p>
+                        Period predictions and fertile-window
+                        estimates are approximate and may not
+                        accurately predict an individual's cycle.
+                        MediAssist provides general educational
+                        information and does not diagnose medical
+                        conditions or replace professional medical
+                        advice.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/period-care.js"></script>
+    <script src="js/pcos-compass.js"></script>
+
+</body>
+
+</html>

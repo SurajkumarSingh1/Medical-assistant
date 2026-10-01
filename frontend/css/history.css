@@ -1,0 +1,1290 @@
+/* =====================================================
+   MEDIASSIST HISTORY PAGE
+   SIDEBAR = EXACTLY SAME AS HEALTH TOOLS
+===================================================== */
+
+
+/* ================= GLOBAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8fc;
+    color: #1f2937;
+}
+
+
+/* =====================================================
+   SIDEBAR
+   SAME AS HEALTH TOOLS
+===================================================== */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background: #0759b5;
+    color: white;
+
+    padding: 25px 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+}
+
+
+/* ================= LOGO ================= */
+
+.logo-area {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    margin-bottom: 40px;
+
+    flex-shrink: 0;
+}
+
+.logo-area span span {
+    color: #5ee7ff;
+}
+
+.logo-circle {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+
+    background: white;
+    color: #0878df;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+/* =====================================================
+   SIDEBAR NAVIGATION
+   SAME AS HEALTH TOOLS
+===================================================== */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+
+    color: white;
+
+    padding: 13px 15px;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 15px;
+
+    transition: background 0.2s ease;
+}
+
+
+/* HOVER + ACTIVE */
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: #087eea;
+}
+
+
+/* =====================================================
+   LOGOUT
+   SAME AS HEALTH TOOLS
+===================================================== */
+
+.logout {
+    margin-top: auto;
+
+    padding: 13px 15px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #ffd1d1;
+
+    flex-shrink: 0;
+}
+
+.logout:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+    margin-left: 240px;
+
+    min-height: 100vh;
+
+    padding: 30px 40px;
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.topbar {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.topbar h1 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+
+    color: #1f2937;
+}
+
+.topbar p {
+    color: #6b7280;
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.profile-mini {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.notification {
+    font-size: 20px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #dbeafe;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =====================================================
+   HISTORY CONTAINER
+===================================================== */
+
+.history-container {
+    width: 100%;
+}
+
+
+/* =====================================================
+   HISTORY HEADING
+===================================================== */
+
+.history-heading {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+
+    border: 1px solid #e2eaf2;
+}
+
+.history-heading h2 {
+    font-size: 22px;
+
+    margin-bottom: 7px;
+
+    color: #1f2937;
+}
+
+.history-heading p {
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   REFRESH BUTTON
+===================================================== */
+
+.refresh-btn {
+    border: none;
+
+    background: #087eea;
+
+    color: white;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.refresh-btn:hover {
+    background: #075fb3;
+}
+
+
+/* =====================================================
+   SEARCH BOX
+===================================================== */
+
+.search-box {
+    width: 100%;
+
+    height: 55px;
+
+    background: white;
+
+    border: 1px solid #dce6f0;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 20px;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.search-box span {
+    font-size: 20px;
+}
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 16px;
+
+    color: #1f2937;
+
+    background: transparent;
+}
+
+.search-box input::placeholder {
+    color: #8ba0b5;
+}
+
+
+/* =====================================================
+   HISTORY LIST
+===================================================== */
+
+.history-list {
+    width: 100%;
+
+    min-height: 340px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    border: 1px solid #e2eaf2;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading {
+    text-align: center;
+
+    color: #6b7280;
+
+    padding: 80px 20px;
+}
+
+
+/* =====================================================
+   EMPTY HISTORY
+===================================================== */
+
+.no-history {
+    padding: 30px;
+
+    color: #1f2937;
+}
+
+.no-history h3 {
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+.no-history p {
+    color: #6b7280;
+
+    margin-bottom: 5px;
+}
+
+.no-history a {
+    color: #075fb3;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   HISTORY ITEMS
+===================================================== */
+
+.history-item {
+    padding: 18px;
+
+    border: 1px solid #e2eaf2;
+
+    border-radius: 10px;
+
+    margin-bottom: 12px;
+
+    background: #ffffff;
+
+    transition: 0.2s;
+}
+
+.history-item:hover {
+    background: #f8fbff;
+
+    border-color: #bcd8f5;
+}
+
+.history-item h3 {
+    color: #102a43;
+
+    font-size: 17px;
+
+    margin-bottom: 6px;
+}
+
+.history-item p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   DISCLAIMER
+===================================================== */
+
+.disclaimer {
+    margin-top: 25px;
+
+    padding: 15px 20px;
+
+    background: #fff8e7;
+
+    border: 1px solid #f3dfaa;
+
+    border-radius: 10px;
+
+    color: #805b13;
+
+    font-size: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+html[data-theme="dark"] body {
+    background: #0f172a;
+
+    color: #f1f5f9;
+}
+
+html[data-theme="dark"] .main-content {
+    background: #0f172a;
+}
+
+html[data-theme="dark"] .topbar h1 {
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .topbar p {
+    color: #a9bad0;
+}
+
+html[data-theme="dark"] .history-heading,
+html[data-theme="dark"] .search-box,
+html[data-theme="dark"] .history-list {
+    background: #18253a;
+
+    border-color: #2c3d55;
+}
+
+html[data-theme="dark"] .history-heading h2 {
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .history-heading p,
+html[data-theme="dark"] .loading {
+    color: #a9bad0;
+}
+
+html[data-theme="dark"] .search-box input {
+    color: white;
+}
+
+html[data-theme="dark"] .search-box input::placeholder {
+    color: #8295ad;
+}
+
+html[data-theme="dark"] .refresh-btn {
+    background: #087eea;
+
+    color: white;
+}
+
+html[data-theme="dark"] .history-item {
+    background: #18253a;
+
+    border-color: #2c3d55;
+}
+
+html[data-theme="dark"] .history-item h3 {
+    color: #f8fafc;
+}
+
+html[data-theme="dark"] .history-item p {
+    color: #a9bad0;
+}
+
+html[data-theme="dark"] .disclaimer {
+    background: #302713;
+
+    border-color: #66521f;
+
+    color: #f5cf70;
+}
+
+
+/* =====================================================
+   MOBILE
+   SAME BREAKPOINTS AS HEALTH TOOLS
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        margin-left: 190px;
+
+        padding: 25px;
+    }
+
+    .history-heading {
+        padding: 22px;
+    }
+
+    .history-list {
+        padding: 25px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        width: 70px;
+
+        padding: 20px 8px;
+    }
+
+    .logo-area span {
+        display: none;
+    }
+
+    .sidebar-nav a span,
+    .logout span {
+        display: none;
+    }
+
+    .sidebar-nav a,
+    .logout {
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-left: 70px;
+
+        padding: 20px;
+    }
+
+    .topbar {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+        margin-bottom: 25px;
+    }
+
+    .topbar h1 {
+        font-size: 26px;
+    }
+
+    .history-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .refresh-btn {
+        width: 100%;
+    }
+
+    .history-list {
+        padding: 20px;
+    }
+
+    .disclaimer {
+        font-size: 13px;
+    }
+}
+
+/* =========================================================
+   MEDIASSIST CHAT HISTORY - FINAL MODERN RESTYLE
+   Visual only - history.js functionality unchanged
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #f4f8fc !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main-content {
+    min-height: 100vh !important;
+    padding: 0 42px 40px !important;
+}
+
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+.topbar {
+    height: 115px !important;
+
+    padding: 0 2px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    background: transparent !important;
+
+    border-bottom: 1px solid #dce6f0 !important;
+}
+
+.topbar h1 {
+    margin: 0 0 5px !important;
+
+    color: #102a43 !important;
+
+    font-size: 32px !important;
+    font-weight: 750 !important;
+}
+
+.topbar p {
+    margin: 0 !important;
+
+    color: #66809a !important;
+
+    font-size: 16px !important;
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.profile-mini {
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 15px !important;
+
+    color: #102a43 !important;
+
+    font-weight: 600 !important;
+}
+
+.notification {
+    width: 42px !important;
+    height: 42px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #e0e8f0 !important;
+
+    border-radius: 50% !important;
+
+    font-size: 20px !important;
+
+    box-shadow: 0 3px 10px rgba(16,42,67,.06) !important;
+}
+
+.avatar {
+    width: 46px !important;
+    height: 46px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #e8f3ff !important;
+
+    border-radius: 50% !important;
+
+    font-size: 21px !important;
+}
+
+
+/* =========================================================
+   HISTORY CONTAINER
+   ========================================================= */
+
+.history-container {
+    width: 100% !important;
+
+    max-width: 1280px !important;
+
+    margin: 0 auto !important;
+
+    padding: 30px 0 40px !important;
+}
+
+
+/* =========================================================
+   HISTORY HEADING
+   ========================================================= */
+
+.history-heading {
+    width: 100% !important;
+
+    min-height: 112px !important;
+
+    padding: 25px 30px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #dfe8f1 !important;
+
+    border-radius: 16px !important;
+
+    box-shadow:
+        0 5px 20px rgba(16,42,67,.05) !important;
+}
+
+.history-heading h2 {
+    margin: 0 0 5px !important;
+
+    color: #102a43 !important;
+
+    font-size: 24px !important;
+    font-weight: 720 !important;
+}
+
+.history-heading p {
+    margin: 0 !important;
+
+    color: #71869a !important;
+
+    font-size: 15px !important;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+   ========================================================= */
+
+.refresh-btn {
+    padding: 12px 20px !important;
+
+    border: none !important;
+
+    border-radius: 10px !important;
+
+    background: #168be8 !important;
+
+    color: #ffffff !important;
+
+    font-size: 14px !important;
+    font-weight: 650 !important;
+
+    cursor: pointer !important;
+
+    transition: all .2s ease !important;
+
+    box-shadow:
+        0 4px 12px rgba(22,139,232,.18) !important;
+}
+
+.refresh-btn:hover {
+    background: #0878d1 !important;
+
+    transform: translateY(-1px) !important;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-box {
+    width: 100% !important;
+
+    height: 60px !important;
+
+    margin-top: 18px !important;
+
+    padding: 0 20px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 12px !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #dce6f0 !important;
+
+    border-radius: 13px !important;
+
+    box-shadow:
+        0 3px 12px rgba(16,42,67,.03) !important;
+}
+
+.search-box span {
+    flex-shrink: 0 !important;
+
+    font-size: 21px !important;
+}
+
+.search-box input {
+    width: 100% !important;
+
+    border: none !important;
+    outline: none !important;
+
+    background: transparent !important;
+
+    color: #102a43 !important;
+
+    font-size: 15px !important;
+}
+
+.search-box input::placeholder {
+    color: #8ba0b5 !important;
+}
+
+
+/* =========================================================
+   HISTORY LIST
+   ========================================================= */
+
+.history-list {
+    width: 100% !important;
+
+    margin-top: 20px !important;
+
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    min-height: 0 !important;
+}
+
+
+/* =========================================================
+   INDIVIDUAL HISTORY CARD
+   ========================================================= */
+
+.history-card {
+    width: 100% !important;
+
+    margin-bottom: 18px !important;
+
+    padding: 22px 24px !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #dfe7ef !important;
+
+    border-radius: 16px !important;
+
+    box-shadow:
+        0 5px 18px rgba(16,42,67,.05) !important;
+
+    transition: all .2s ease !important;
+}
+
+.history-card:hover {
+    transform: translateY(-2px) !important;
+
+    border-color: #cddbe8 !important;
+
+    box-shadow:
+        0 9px 25px rgba(16,42,67,.08) !important;
+}
+
+
+/* =========================================================
+   HISTORY HEADER
+   ========================================================= */
+
+.history-header {
+    width: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    gap: 15px !important;
+
+    margin-bottom: 16px !important;
+
+    padding-bottom: 14px !important;
+
+    border-bottom: 1px solid #edf1f5 !important;
+}
+
+.history-date {
+    color: #62758a !important;
+
+    font-size: 13px !important;
+    font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+   ========================================================= */
+
+.delete-btn {
+    border: none !important;
+
+    padding: 8px 13px !important;
+
+    background: #fff0f0 !important;
+
+    color: #d93025 !important;
+
+    border-radius: 8px !important;
+
+    font-size: 12px !important;
+    font-weight: 650 !important;
+
+    cursor: pointer !important;
+
+    transition: all .2s ease !important;
+}
+
+.delete-btn:hover {
+    background: #ffdede !important;
+
+    color: #b91c1c !important;
+
+    transform: translateY(-1px) !important;
+}
+
+
+/* =========================================================
+   USER QUESTION
+   ========================================================= */
+
+.question {
+    width: 100% !important;
+
+    margin-bottom: 12px !important;
+
+    padding: 15px 17px !important;
+
+    background: #eef6ff !important;
+
+    border: 1px solid #dbeeff !important;
+
+    border-left: 4px solid #168be8 !important;
+
+    border-radius: 11px !important;
+
+    color: #334e68 !important;
+
+    font-size: 14px !important;
+
+    line-height: 1.6 !important;
+
+    overflow-wrap: anywhere !important;
+}
+
+.question strong {
+    color: #1268df !important;
+
+    font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   AI ANSWER
+   ========================================================= */
+
+.answer {
+    width: 100% !important;
+
+    padding: 16px 17px !important;
+
+    background: #f8fafc !important;
+
+    border: 1px solid #e5ebf1 !important;
+
+    border-left: 4px solid #7b8794 !important;
+
+    border-radius: 11px !important;
+
+    color: #3d4858 !important;
+
+    font-size: 14px !important;
+
+    line-height: 1.65 !important;
+
+    overflow-wrap: anywhere !important;
+}
+
+.answer strong {
+    color: #172033 !important;
+
+    font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-history {
+    width: 100% !important;
+
+    padding: 70px 20px !important;
+
+    text-align: center !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #e2eaf2 !important;
+
+    border-radius: 16px !important;
+}
+
+.empty-history .icon {
+    margin-bottom: 15px !important;
+
+    font-size: 48px !important;
+}
+
+.empty-history h3 {
+    margin: 0 0 8px !important;
+
+    color: #172033 !important;
+
+    font-size: 20px !important;
+}
+
+.empty-history p {
+    margin: 0 0 20px !important;
+
+    color: #7b8798 !important;
+
+    font-size: 14px !important;
+}
+
+.empty-history a {
+    display: inline-block !important;
+
+    padding: 10px 18px !important;
+
+    background: #168be8 !important;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    border-radius: 9px !important;
+
+    font-size: 14px !important;
+
+    transition: .2s !important;
+}
+
+.empty-history a:hover {
+    background: #126fc0 !important;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading {
+    width: 100% !important;
+
+    padding: 60px 20px !important;
+
+    text-align: center !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #e2eaf2 !important;
+
+    border-radius: 16px !important;
+
+    color: #71869a !important;
+
+    font-size: 14px !important;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error-message {
+    width: 100% !important;
+
+    padding: 18px 20px !important;
+
+    background: #fff1f2 !important;
+
+    border: 1px solid #fecdd3 !important;
+
+    border-radius: 12px !important;
+
+    color: #be123c !important;
+
+    text-align: center !important;
+
+    font-size: 14px !important;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
+.disclaimer {
+    width: 100% !important;
+
+    max-width: 1280px !important;
+
+    margin: 0 auto 30px !important;
+
+    padding: 14px 20px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    background: #fff8e7 !important;
+
+    border: 1px solid #f3dfaa !important;
+
+    border-radius: 10px !important;
+
+    color: #805b13 !important;
+
+    font-size: 12px !important;
+
+    line-height: 1.5 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .main-content {
+        padding: 0 25px 30px !important;
+    }
+
+    .history-container {
+        padding-top: 25px !important;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .main-content {
+        padding: 0 12px 25px !important;
+    }
+
+    .topbar {
+        height: 90px !important;
+    }
+
+    .topbar h1 {
+        font-size: 25px !important;
+    }
+
+    .topbar p {
+        font-size: 13px !important;
+    }
+
+    .profile-mini > span {
+        display: none !important;
+    }
+
+    .history-container {
+        padding-top: 18px !important;
+    }
+
+    .history-heading {
+        padding: 20px !important;
+
+        align-items: flex-start !important;
+    }
+
+    .history-heading h2 {
+        font-size: 20px !important;
+    }
+
+    .refresh-btn {
+        padding: 9px 12px !important;
+
+        font-size: 12px !important;
+    }
+
+    .history-card {
+        padding: 17px !important;
+    }
+
+    .history-header {
+        align-items: flex-start !important;
+    }
+
+    .question,
+    .answer {
+        font-size: 13px !important;
+    }
+}

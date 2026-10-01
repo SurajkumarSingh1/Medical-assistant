@@ -1,0 +1,666 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8fc;
+    color: #1f2937;
+}
+
+
+/* =========================================================
+   SIDEBAR — SAME AS HEALTH TOOLS
+========================================================= */
+
+.sidebar {
+    position: fixed !important;
+
+    left: 0 !important;
+    top: 0 !important;
+
+    width: 264px !important;
+    height: 100vh !important;
+
+    background: #061a38 !important;
+    color: white;
+
+    padding: 25px 17px !important;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    margin-bottom: 55px !important;
+}
+
+.logo-area span span {
+    color: #5ee7ff;
+}
+
+.logo-circle {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 10px;
+
+    background: #168fee;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.sidebar-nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px !important;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+
+    color: white;
+
+    height: 55px !important;
+
+    padding: 0 15px !important;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center !important;
+
+    gap: 14px;
+
+    font-size: 16px;
+
+    line-height: normal !important;
+
+    transition: background 0.2s ease;
+}
+
+
+/* ICONS */
+.sidebar-nav a .icon,
+.sidebar-nav a span:first-child {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 22px;
+}
+
+
+/* HOVER + ACTIVE */
+
+.sidebar-nav a:hover {
+    background: rgba(22, 143, 238, 0.75);
+}
+
+.sidebar-nav a.active {
+    background: #168fee !important;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout {
+    margin-top: auto !important;
+
+    height: 55px !important;
+
+    padding: 0 15px !important;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center !important;
+
+    gap: 14px;
+
+    color: #ff5555 !important;
+
+    font-size: 16px;
+
+    line-height: normal !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+    margin-left: 290px !important;
+
+    min-height: 100vh;
+
+    padding: 0 !important;
+
+    background: #f4f8fc;
+}
+
+
+/* =========================================================
+   TOPBAR — SAME AS HEALTH TOOLS
+========================================================= */
+
+.topbar {
+    width: 100%;
+
+    min-height: 115px;
+
+    padding: 24px 45px;
+
+    background: white;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 0 !important;
+}
+
+.topbar h1 {
+    font-size: 36px;
+
+    margin-bottom: 5px;
+
+    color: #16365f;
+}
+
+.topbar p {
+    color: #63748a;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-mini {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.notification {
+    font-size: 23px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #e7f1ff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   EMERGENCY PAGE CONTENT
+========================================================= */
+
+.emergency-page-content {
+    padding: 32px 45px;
+}
+
+
+/* =========================================================
+   WARNING
+========================================================= */
+
+.emergency-warning {
+    background: #fff1f1;
+
+    border: 1px solid #fecaca;
+
+    border-left: 6px solid #dc2626;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+.warning-icon {
+    font-size: 38px;
+}
+
+.emergency-warning h2 {
+    color: #b91c1c;
+
+    margin-bottom: 7px;
+
+    font-size: 27px;
+}
+
+.emergency-warning p {
+    color: #63748a;
+
+    line-height: 1.5;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   EMERGENCY GRID
+========================================================= */
+
+.emergency-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   EMERGENCY CARDS — HEALTH TOOLS STYLE
+========================================================= */
+
+.emergency-card {
+    background: white;
+
+    border-radius: 17px;
+
+    padding: 34px;
+
+    min-height: 265px;
+
+    border: 1px solid #edf1f5;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.emergency-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.card-icon {
+    font-size: 38px;
+
+    margin-bottom: 20px;
+
+    display: block;
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.emergency-card h3 {
+    font-size: 23px;
+
+    margin-bottom: 10px;
+
+    color: #162f51;
+}
+
+.emergency-card p {
+    color: #63748a;
+
+    margin-bottom: 22px;
+
+    line-height: 1.5;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.emergency-btn,
+.normal-btn {
+    border: none;
+
+    padding: 13px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.emergency-btn {
+    background: #dc2626;
+
+    color: white;
+}
+
+.emergency-btn:hover {
+    background: #b91c1c;
+}
+
+.normal-btn {
+    background: #168fee;
+
+    color: white;
+}
+
+.normal-btn:hover {
+    background: #0877d1;
+}
+
+
+/* =========================================================
+   SAFETY CARD
+========================================================= */
+
+.safety-card {
+    background: white;
+
+    border-radius: 17px;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #edf1f5;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.safety-card h2 {
+    margin-bottom: 18px;
+
+    font-size: 22px;
+
+    color: #162f51;
+}
+
+.safety-card ul {
+    padding-left: 22px;
+}
+
+.safety-card li {
+    margin-bottom: 12px;
+
+    color: #63748a;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SAFETY + IMAGE
+========================================================= */
+
+.emergency-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    align-items: stretch;
+
+    margin-top: 25px;
+}
+
+.safety-tips,
+.health-image {
+    height: 300px;
+
+    box-sizing: border-box;
+
+    border-radius: 17px;
+
+    background: white;
+
+    border: 1px solid #edf1f5;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.safety-tips {
+    padding: 28px;
+}
+
+.safety-tips h2 {
+    margin: 0 0 18px;
+
+    font-size: 22px;
+
+    color: #162f51;
+}
+
+.safety-tips ul {
+    margin: 0;
+
+    padding-left: 20px;
+}
+
+.safety-tips li {
+    margin-bottom: 12px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: #63748a;
+}
+
+.health-image {
+    padding: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.health-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.disclaimer {
+    background: #fff8e6;
+
+    border: 1px solid #fde68a;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    color: #92400e;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 240px !important;
+    }
+
+    .main-content {
+        margin-left: 240px !important;
+    }
+
+    .topbar {
+        padding: 24px 30px;
+    }
+
+    .emergency-page-content {
+        padding: 30px;
+    }
+
+    .emergency-grid,
+    .emergency-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        width: 70px !important;
+
+        padding: 20px 8px !important;
+    }
+
+    .logo-area {
+        justify-content: center;
+
+        margin-bottom: 35px !important;
+    }
+
+    .logo-area span {
+        display: none;
+    }
+
+    .sidebar-nav a span,
+    .logout span {
+        display: none;
+    }
+
+    .sidebar-nav a,
+    .logout {
+        justify-content: center;
+
+        padding: 0 !important;
+    }
+
+    .main-content {
+        margin-left: 70px !important;
+    }
+
+    .topbar {
+        min-height: 100px;
+
+        padding: 20px;
+    }
+
+    .topbar h1 {
+        font-size: 28px;
+    }
+
+    .topbar p {
+        font-size: 15px;
+    }
+
+    .emergency-page-content {
+        padding: 20px;
+    }
+
+    .emergency-warning {
+        align-items: flex-start;
+    }
+}

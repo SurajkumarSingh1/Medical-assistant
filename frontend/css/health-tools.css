@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8fc;
+    color: #1f2937;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background: #0759b5;
+    color: white;
+
+    padding: 25px 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    margin-bottom: 40px;
+}
+
+.logo-area span span {
+    color: #5ee7ff;
+}
+
+.logo-circle {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+
+    background: white;
+    color: #0878df;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: white;
+
+    padding: 13px 15px;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 15px;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: #087eea;
+}
+
+.logout {
+    margin-top: auto;
+
+    padding: 13px 15px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #ffd1d1;
+}
+
+
+/* ================= MAIN ================= */
+
+.main-content {
+    margin-left: 240px;
+
+    min-height: 100vh;
+
+    padding: 30px 40px;
+}
+
+
+/* ================= TOP BAR ================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.topbar h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.topbar p {
+    color: #6b7280;
+}
+
+.profile-mini {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification {
+    font-size: 20px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #dbeafe;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ================= TOOLS ================= */
+
+.tools-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(280px, 1fr));
+
+    gap: 25px;
+}
+
+.tool-card {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.tool-icon {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 12px;
+
+    background: #e8f3ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+.tool-card h2 {
+    margin-bottom: 10px;
+
+    font-size: 21px;
+}
+
+.tool-card p {
+    color: #6b7280;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+.tool-card button {
+    border: none;
+
+    background: #087eea;
+    color: white;
+
+    padding: 11px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.tool-card button:hover {
+    background: #075fb3;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        margin-left: 190px;
+
+        padding: 25px;
+    }
+
+    .tools-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        width: 70px;
+        padding: 20px 8px;
+    }
+
+    .logo-area span {
+        display: none;
+    }
+
+    .sidebar-nav a span,
+    .logout span {
+        display: none;
+    }
+
+    .sidebar-nav a,
+    .logout {
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-left: 70px;
+
+        padding: 20px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}

@@ -1,0 +1,3042 @@
+/* =========================================================
+   MEDIASSIST - PERIOD CARE
+   Complete Page Styling
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f6f8fc;
+
+    color: #1f2937;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 245px;
+    height: 100vh;
+
+    background: #ffffff;
+
+    border-right: 1px solid #e5e7eb;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-area {
+
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 25px;
+
+    gap: 12px;
+
+    border-bottom: 1px solid #f1f3f6;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+
+.logo-area > span span {
+    color: #e83e8c;
+}
+
+
+.logo-circle {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #e83e8c;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.sidebar-nav {
+
+    padding: 18px 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    overflow-y: auto;
+}
+
+
+.sidebar-nav a,
+.logout {
+
+    text-decoration: none;
+
+    color: #64748b;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.sidebar-nav a:hover,
+.logout:hover {
+
+    background: #fff0f6;
+
+    color: #e83e8c;
+
+    transform: translateX(2px);
+}
+
+
+.sidebar-nav a.active {
+
+    background: #ffe7f1;
+
+    color: #e83e8c;
+
+    font-weight: 600;
+}
+
+
+.nav-icon {
+
+    width: 23px;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout {
+
+    margin: auto 12px 18px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+
+    margin-left: 245px;
+
+    min-height: 100vh;
+
+    padding: 0 30px 40px;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    margin-bottom: 28px;
+}
+
+
+.topbar h1 {
+
+    font-size: 28px;
+
+    color: #172033;
+
+    margin-bottom: 6px;
+}
+
+
+.topbar p {
+
+    color: #7b8494;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-mini {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.notification {
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+
+.avatar {
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #ffe7f1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.period-container {
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   INTRO CARD
+========================================================= */
+
+.intro-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff4f8,
+            #fffafd
+        );
+
+    border: 1px solid #f9d8e7;
+
+    border-radius: 16px;
+
+    padding: 22px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+.intro-icon {
+
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    border-radius: 14px;
+
+    background: #ffe0ed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+
+.intro-card h2 {
+
+    font-size: 20px;
+
+    color: #202938;
+
+    margin-bottom: 6px;
+}
+
+
+.intro-card p {
+
+    color: #737b89;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.setup-card,
+.calendar-card,
+.tracking-card,
+.self-care-card {
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 4px 15px rgba(
+            15,
+            23,
+            42,
+            0.03
+        );
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+
+.section-heading h2 {
+
+    font-size: 19px;
+
+    color: #1f2937;
+
+    margin-bottom: 5px;
+}
+
+
+.section-heading p {
+
+    font-size: 13px;
+
+    color: #7b8494;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.form-group label {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #374151;
+
+    margin-bottom: 8px;
+}
+
+
+.form-group input {
+
+    width: 100%;
+
+    height: 45px;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 9px;
+
+    padding: 0 13px;
+
+    font-size: 14px;
+
+    color: #374151;
+
+    background: #ffffff;
+
+    outline: none;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.form-group input:focus {
+
+    border-color: #e83e8c;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            232,
+            62,
+            140,
+            0.08
+        );
+}
+
+
+.form-group small {
+
+    margin-top: 6px;
+
+    font-size: 11px;
+
+    color: #9299a6;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.primary-btn {
+
+    border: none;
+
+    background: #e83e8c;
+
+    color: #ffffff;
+
+    padding: 12px 21px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.primary-btn:hover {
+
+    background: #d92f7c;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 14px rgba(
+            232,
+            62,
+            140,
+            0.18
+        );
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.summary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+
+.summary-card {
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 19px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-height: 105px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.summary-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(
+            15,
+            23,
+            42,
+            0.06
+        );
+}
+
+
+.summary-icon {
+
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+
+    border-radius: 12px;
+
+    background: #fff0f6;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+
+.summary-label {
+
+    display: block;
+
+    font-size: 11px;
+
+    color: #858d9b;
+
+    margin-bottom: 6px;
+}
+
+
+.summary-card strong {
+
+    display: block;
+
+    font-size: 15px;
+
+    color: #252d3b;
+
+    line-height: 1.3;
+}
+
+
+.cycle-card {
+
+    border-color: #f5c9dc;
+}
+
+
+/* =========================================================
+   CALENDAR
+========================================================= */
+
+.calendar-card {
+
+    padding: 25px;
+}
+
+
+.calendar-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+
+.calendar-header h2 {
+
+    font-size: 19px;
+
+    color: #1f2937;
+}
+
+
+.calendar-nav {
+
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid #e5e7eb;
+
+    background: #ffffff;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 22px;
+
+    color: #596273;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.calendar-nav:hover {
+
+    background: #fff0f6;
+
+    color: #e83e8c;
+}
+
+
+/* =========================================================
+   CALENDAR LEGEND
+========================================================= */
+
+.calendar-legend {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+
+    font-size: 11px;
+
+    color: #737b89;
+}
+
+
+.calendar-legend span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.legend-dot {
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+
+.period-dot {
+
+    background: #e83e8c;
+}
+
+
+.fertile-dot {
+
+    background: #c8a0ff;
+}
+
+
+.ovulation-dot {
+
+    background: #8b5cf6;
+}
+
+
+.today-dot {
+
+    border: 2px solid #e83e8c;
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   CALENDAR GRID
+========================================================= */
+
+.calendar {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 7px;
+}
+
+
+.calendar-day-name {
+
+    text-align: center;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: #8b93a1;
+
+    padding: 8px 0;
+}
+
+
+.calendar-day {
+
+    min-height: 43px;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    color: #424b59;
+
+    cursor: default;
+
+    position: relative;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.calendar-day:hover {
+
+    background: #f7f8fa;
+}
+
+
+.calendar-day.other-month {
+
+    color: #c6cbd3;
+}
+
+
+/* =========================================================
+   PERIOD DAY
+========================================================= */
+
+.calendar-day.period {
+
+    background: #ffe1ec;
+
+    color: #d72f75;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FERTILE WINDOW
+========================================================= */
+
+.calendar-day.fertile {
+
+    background: #f1e8ff;
+
+    color: #7c45c9;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   OVULATION
+========================================================= */
+
+.calendar-day.ovulation {
+
+    background: #dfd0ff;
+
+    color: #6436a8;
+
+    font-weight: 700;
+
+    box-shadow:
+        inset 0 0 0 2px #8b5cf6;
+}
+
+
+/* =========================================================
+   TODAY
+========================================================= */
+
+.calendar-day.today {
+
+    box-shadow:
+        inset 0 0 0 2px #e83e8c;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TRACKING
+========================================================= */
+
+.tracking-card {
+
+    padding-bottom: 27px;
+}
+
+
+.tracking-section {
+
+    margin-bottom: 24px;
+}
+
+
+.tracking-section h3 {
+
+    font-size: 14px;
+
+    color: #374151;
+
+    margin-bottom: 12px;
+}
+
+
+.option-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+.symptom-option,
+.mood-option,
+.flow-option {
+
+    border: 1px solid #e3e6eb;
+
+    background: #ffffff;
+
+    border-radius: 9px;
+
+    padding: 11px 10px;
+
+    color: #596273;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.symptom-option:hover,
+.mood-option:hover,
+.flow-option:hover {
+
+    border-color: #f0a3c2;
+
+    background: #fff7fa;
+
+    color: #d72f75;
+}
+
+
+.symptom-option.selected,
+.mood-option.selected,
+.flow-option.selected {
+
+    background: #ffe6f0;
+
+    border-color: #e83e8c;
+
+    color: #d72f75;
+
+    font-weight: 600;
+}
+
+
+.symptom-option:active,
+.mood-option:active,
+.flow-option:active {
+
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   MOOD
+========================================================= */
+
+.mood-grid {
+
+    grid-template-columns:
+        repeat(6, 1fr);
+}
+
+
+/* =========================================================
+   FLOW
+========================================================= */
+
+.flow-grid {
+
+    grid-template-columns:
+        repeat(4, 1fr);
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.save-btn {
+
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   SELF CARE
+========================================================= */
+
+.care-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 13px;
+}
+
+
+.care-item {
+
+    border: 1px solid #edf0f3;
+
+    border-radius: 12px;
+
+    padding: 16px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    background: #fcfdff;
+}
+
+
+.care-icon {
+
+    width: 39px;
+    height: 39px;
+
+    min-width: 39px;
+
+    border-radius: 10px;
+
+    background: #fff0f6;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+.care-item h3 {
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+
+    color: #343c4b;
+}
+
+
+.care-item p {
+
+    font-size: 11px;
+
+    color: #7c8491;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   AI CARD
+========================================================= */
+
+.ai-period-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f8f1ff
+        );
+
+    border: 1px solid #f1d9e5;
+
+    border-radius: 16px;
+
+    padding: 23px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.ai-icon {
+
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 4px 12px rgba(
+            0,
+            0,
+            0,
+            0.04
+        );
+}
+
+
+.ai-content h2 {
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+
+    color: #2d3442;
+}
+
+
+.ai-content p {
+
+    font-size: 13px;
+
+    color: #737b89;
+
+    margin-bottom: 13px;
+}
+
+
+.ai-btn {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #e83e8c;
+
+    color: #ffffff;
+
+    padding: 10px 17px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.ai-btn:hover {
+
+    background: #d72f7b;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.disclaimer {
+
+    background: #fffaf0;
+
+    border: 1px solid #f5e6bd;
+
+    border-radius: 12px;
+
+    padding: 15px 17px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    color: #74663f;
+
+    margin-bottom: 20px;
+}
+
+
+.disclaimer-icon {
+
+    font-size: 17px;
+
+    margin-top: 1px;
+}
+
+
+.disclaimer strong {
+
+    display: block;
+
+    color: #63562f;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+
+.disclaimer p {
+
+    font-size: 11px;
+
+    line-height: 1.55;
+
+    color: #81744e;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.sidebar-nav::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+
+    background: #e5e7eb;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+    width: 268px;
+    height: 100vh;
+    padding: 28px 16px 20px;
+    box-sizing: border-box;
+}
+
+
+    .sidebar {
+    width: 268px;
+    height: 100vh;
+    padding: 28px 16px 20px;
+    box-sizing: border-box;
+}
+
+
+    .summary-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .mood-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+    }
+
+
+    .logo-area {
+
+        height: 70px;
+
+    }
+
+
+    .sidebar-nav {
+
+        flex-direction: row;
+
+        overflow-x: auto;
+
+        padding: 10px;
+
+    }
+
+
+    .sidebar-nav a {
+
+        min-width: max-content;
+
+    }
+
+
+    .logout {
+
+        margin: 0 12px 12px;
+
+    }
+
+
+    .main-content {
+
+        margin-left: 0;
+
+        padding: 0 15px 30px;
+
+    }
+
+
+    .topbar {
+
+        min-height: 85px;
+
+    }
+
+
+    .topbar h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    .profile-mini span {
+
+        display: none;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .summary-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .option-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .mood-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .flow-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .care-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .intro-card,
+    .ai-period-card {
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .topbar {
+
+        align-items: flex-start;
+
+        padding-top: 18px;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+    }
+
+
+    .intro-card {
+
+        padding: 18px;
+
+    }
+
+
+    .setup-card,
+    .calendar-card,
+    .tracking-card,
+    .self-care-card {
+
+        padding: 18px;
+
+    }
+
+
+    .calendar {
+
+        gap: 3px;
+
+    }
+
+
+    .calendar-day {
+
+        min-height: 37px;
+
+        font-size: 11px;
+
+    }
+
+
+    .calendar-legend {
+
+        gap: 9px;
+
+    }
+
+
+    .disclaimer {
+
+        padding: 13px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MEDIASSIST PERIOD CARE - HISTORY
+   ========================================================= */
+
+/* Cycle Setup heading with History button */
+.cycle-heading-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 20px;
+    width: 100%;
+}
+
+.cycle-heading-left {
+    min-width: 0;
+}
+
+/* =========================================
+   VIEW HISTORY BUTTON
+   MATCHES CALCULATE MY CYCLE BUTTON
+========================================= */
+
+.period-history-btn {
+    margin-top: 8px;
+
+    background: #e83e8c;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px 22px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: all 0.2s ease;
+
+    box-shadow: none;
+}
+
+.period-history-btn:hover {
+    background: #d92f7b;
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+.period-history-btn.active {
+    background: #d92f7b;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   HISTORY CARD
+   ========================================================= */
+
+.period-history-card {
+    width: 100%;
+    margin-top: 22px;
+    padding: 24px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid #f1d6e3;
+    border-radius: 16px;
+
+    box-shadow: 0 6px 20px rgba(31, 41, 55, 0.05);
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   HISTORY IS HIDDEN UNTIL VIEW HISTORY IS CLICKED
+   ========================================================= */
+
+.history-panel {
+    display: none !important;
+}
+
+.history-panel.show {
+    display: block !important;
+}
+
+
+/* =========================================================
+   HISTORY SECTION HEADINGS
+   ========================================================= */
+
+.history-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+    margin: 0 0 12px;
+}
+
+.history-section-title h3 {
+    margin: 0;
+    color: #172b4d;
+    font-size: 20px;
+}
+
+.history-section-title + .history-list {
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   CLEAR HISTORY BUTTONS
+   ========================================================= */
+
+.clear-history-btn {
+    border: none;
+    background: #fff0f4;
+    color: #d6336c;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.clear-history-btn:hover {
+    background: #ffe0eb;
+}
+
+
+/* =========================================================
+   HISTORY LIST
+   ========================================================= */
+
+.history-list {
+    display: grid;
+    gap: 12px;
+}
+
+
+/* Individual history record */
+.history-item {
+    padding: 16px;
+
+    border: 1px solid #edf0f4;
+    border-radius: 12px;
+
+    background: #fbfcfe;
+
+    transition: all 0.2s ease;
+}
+
+.history-item:hover {
+    border-color: #f1c6d9;
+    box-shadow: 0 4px 12px rgba(31, 41, 55, 0.05);
+}
+
+
+/* History item top row */
+.history-item-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 10px;
+}
+
+
+/* History date */
+.history-date {
+    font-weight: 800;
+    color: #172b4d;
+}
+
+
+/* History badge */
+.history-badge {
+    display: inline-block;
+
+    padding: 4px 9px;
+
+    border-radius: 999px;
+
+    background: #ffe4ef;
+    color: #d6336c;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* History details */
+.history-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+
+/* Individual detail */
+.history-detail {
+    padding: 10px 12px;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+}
+
+
+/* Detail label */
+.history-detail span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    color: #7b8794;
+}
+
+
+/* Detail value */
+.history-detail strong {
+    color: #172b4d;
+    font-size: 14px;
+}
+
+
+/* Empty history message */
+.history-empty {
+    padding: 22px;
+
+    text-align: center;
+
+    border: 1px dashed #d8dee8;
+    border-radius: 12px;
+
+    color: #7b8794;
+
+    background: #fafbfd;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .cycle-heading-row {
+        grid-template-columns: 1fr;
+    }
+
+    .period-history-btn {
+        margin-top: 0;
+        justify-self: start;
+    }
+
+    .history-section-title {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .history-item-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .history-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   INDIVIDUAL HISTORY DELETE BUTTON
+========================================================= */
+
+.history-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.delete-history-btn {
+    border: 1px solid #f1c6d9;
+    background: #ffffff;
+    color: #d6336c;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.delete-history-btn:hover {
+    background: #fff0f4;
+    border-color: #e83e8c;
+    color: #c2255c;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .history-actions {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+}
+
+/* =====================================================
+   PERIOD CARE SIDEBAR
+   SAME DIMENSIONS AS OTHER PAGES
+   KEEP ORIGINAL PERIOD CARE COLORS
+   ===================================================== */
+
+.sidebar {
+    width: 268px !important;
+    min-width: 268px !important;
+    max-width: 268px !important;
+
+    height: 100vh !important;
+
+    box-sizing: border-box !important;
+
+    padding: 28px 16px 20px !important;
+}
+
+.logo-area {
+    box-sizing: border-box !important;
+
+    gap: 10px !important;
+    padding: 0 14px !important;
+    margin-bottom: 35px !important;
+}
+
+.logo-circle {
+    width: 34px !important;
+    height: 34px !important;
+}
+
+.sidebar-nav {
+    gap: 6px !important;
+}
+
+.sidebar-nav a {
+    min-height: 45px !important;
+    height: 45px !important;
+
+    box-sizing: border-box !important;
+
+    padding: 10px 14px !important;
+    gap: 13px !important;
+}
+
+.nav-icon {
+    width: 21px !important;
+    min-width: 21px !important;
+    font-size: 16px !important;
+}
+
+.logout {
+    width: 100% !important;
+    min-height: 45px !important;
+    height: 45px !important;
+
+    box-sizing: border-box !important;
+
+    padding: 10px 14px !important;
+    gap: 13px !important;
+
+    margin-top: auto !important;
+}
+
+.main-content {
+    margin-left: 268px !important;
+    width: calc(100% - 268px) !important;
+
+    box-sizing: border-box !important;
+}
+/* =========================================================
+   PERIOD CARE SIDEBAR - MATCH REPORT SCANNER DIMENSIONS
+   Keeps Period Care's own colors
+   ========================================================= */
+
+.sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+
+    width: 268px !important;
+    min-width: 268px !important;
+    max-width: 268px !important;
+
+    height: 100vh !important;
+    min-height: 100vh !important;
+
+    padding: 28px 16px 20px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    box-sizing: border-box !important;
+
+    overflow-y: auto !important;
+    z-index: 1000 !important;
+}
+
+
+/* Make everything inside the sidebar use the same box model */
+.sidebar,
+.sidebar * {
+    box-sizing: border-box !important;
+}
+
+
+/* ---------- LOGO ---------- */
+
+.logo-area {
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    padding: 0 14px !important;
+    margin-bottom: 35px !important;
+}
+
+.logo-circle {
+    width: 34px !important;
+    height: 34px !important;
+
+    min-width: 34px !important;
+    min-height: 34px !important;
+
+    flex-shrink: 0 !important;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+.sidebar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 6px !important;
+}
+
+.sidebar-nav a {
+    display: flex !important;
+    align-items: center !important;
+
+    width: 100% !important;
+
+    min-height: 45px !important;
+    height: 45px !important;
+
+    padding: 10px 14px !important;
+
+    gap: 13px !important;
+
+    border-radius: 9px !important;
+}
+
+
+/* ---------- NAV ICON ---------- */
+
+.nav-icon {
+    width: 21px !important;
+    min-width: 21px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex-shrink: 0 !important;
+
+    font-size: 16px !important;
+}
+
+
+/* ---------- LOGOUT ---------- */
+
+.logout {
+    display: flex !important;
+    align-items: center !important;
+
+    width: 100% !important;
+
+    min-height: 45px !important;
+    height: 45px !important;
+
+    padding: 10px 14px !important;
+
+    gap: 13px !important;
+
+    margin-top: auto !important;
+
+    border-radius: 9px !important;
+}
+
+
+/* ---------- MAIN CONTENT ---------- */
+
+.main-content {
+    margin-left: 268px !important;
+
+    width: calc(100% - 268px) !important;
+
+    min-height: 100vh !important;
+
+    box-sizing: border-box !important;
+}
+
+/* =========================================================
+   PCOS HEALTH COMPASS
+   ========================================================= */
+
+.pcos-compass-launch-card {
+    width: 100%;
+    margin: 24px 0;
+
+    padding: 24px 26px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #fff1f7,
+        #fff8fb
+    );
+
+    border: 1px solid #f5c7db;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 18px rgba(216, 67, 125, 0.07);
+}
+
+
+.pcos-launch-icon {
+    width: 58px;
+    height: 58px;
+
+    min-width: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffe4ef;
+
+    border-radius: 16px;
+
+    font-size: 29px;
+}
+
+
+.pcos-launch-content {
+    flex: 1;
+}
+
+
+.pcos-launch-content h2 {
+    margin: 0 0 5px;
+
+    color: #172033;
+
+    font-size: 20px;
+}
+
+
+.pcos-launch-content p {
+    margin: 0;
+
+    color: #66788a;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+}
+
+
+.pcos-open-btn {
+    flex-shrink: 0;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #e83e8c;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.pcos-open-btn:hover {
+    background: #d92f7b;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MAIN SECTION
+   ========================================================= */
+
+.pcos-compass-section {
+    display: none;
+
+    width: 100%;
+
+    margin: 24px 0 35px;
+
+    padding: 0;
+}
+
+
+.pcos-compass-section.show {
+    display: block;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.pcos-compass-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+.pcos-title-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.pcos-title-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffe8f1;
+
+    border-radius: 14px;
+
+    font-size: 24px;
+}
+
+
+.pcos-compass-header h2 {
+    margin: 0 0 4px;
+
+    color: #172033;
+
+    font-size: 25px;
+}
+
+
+.pcos-compass-header p {
+    margin: 0;
+
+    color: #718096;
+
+    font-size: 13px;
+}
+
+
+.pcos-close-btn {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #e3dce1;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #687385;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.pcos-close-btn:hover {
+    background: #fff0f5;
+
+    color: #e83e8c;
+
+    border-color: #f1bfd4;
+}
+
+
+/* =========================================================
+   BOX
+   ========================================================= */
+
+.pcos-box {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #e3e8ee;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 5px 18px rgba(16, 42, 67, 0.05);
+}
+
+
+.pcos-box-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+.pcos-box-heading h3 {
+    margin: 0 0 5px;
+
+    color: #172033;
+
+    font-size: 18px;
+}
+
+
+.pcos-box-heading p {
+    margin: 0;
+
+    color: #718096;
+
+    font-size: 13px;
+}
+
+
+.pcos-step-badge {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffe7f0;
+
+    color: #e83e8c;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.pcos-form-group {
+    margin-bottom: 18px;
+}
+
+
+.pcos-form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #253b53;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.pcos-form-group select,
+.pcos-form-group input[type="number"] {
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d9e1e8;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #253b53;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+.pcos-form-group select:focus,
+.pcos-form-group input[type="number"]:focus {
+    border-color: #e83e8c;
+
+    box-shadow:
+        0 0 0 3px rgba(232, 62, 140, 0.10);
+}
+
+
+.pcos-two-column {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   SYMPTOMS
+   ========================================================= */
+
+.pcos-symptom-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+
+.pcos-check-option {
+    margin: 0 !important;
+
+    padding: 12px 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    background: #fff9fc;
+
+    border: 1px solid #f0dce5;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.pcos-check-option:hover {
+    border-color: #e83e8c;
+
+    background: #fff2f7;
+}
+
+
+.pcos-check-option input {
+    accent-color: #e83e8c;
+
+    width: 16px;
+    height: 16px;
+}
+
+
+.pcos-check-option span {
+    color: #4b6075;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.pcos-primary-btn {
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #e83e8c;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.pcos-primary-btn:hover {
+    background: #d92f7b;
+
+    transform: translateY(-1px);
+}
+
+
+.pcos-secondary-btn {
+    margin-top: 16px;
+
+    padding: 10px 16px;
+
+    border: 1px solid #e7c8d7;
+
+    border-radius: 9px;
+
+    background: #fff7fa;
+
+    color: #c62e70;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.pcos-secondary-btn:hover {
+    background: #ffeaf2;
+}
+
+
+/* =========================================================
+   HEALTH OVERVIEW
+   ========================================================= */
+
+.pcos-health-overview {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+
+.pcos-overview-item {
+    padding: 13px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e6ebf0;
+
+    border-radius: 10px;
+}
+
+
+.pcos-overview-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #7b8794;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.pcos-overview-value {
+    color: #172033;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   WHAT CHANGED
+   ========================================================= */
+
+.pcos-change-card {
+    padding: 18px;
+
+    background: #fff8fb;
+
+    border: 1px solid #f2d5e1;
+
+    border-left: 4px solid #e83e8c;
+
+    border-radius: 12px;
+}
+
+
+.pcos-change-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color: #c62e70;
+
+    font-size: 15px;
+}
+
+
+.pcos-change-content {
+    color: #526579;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+.pcos-change-item {
+    margin-bottom: 7px;
+}
+
+
+.pcos-change-item:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   MAIN INSIGHT
+   ========================================================= */
+
+.pcos-main-insight {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-top: 18px;
+
+    padding: 18px;
+
+    background: #fff4f8;
+
+    border: 1px solid #f4cfdd;
+
+    border-radius: 12px;
+}
+
+
+.pcos-insight-icon {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffe2ed;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+}
+
+
+.pcos-main-insight h4 {
+    margin: 0 0 5px;
+
+    color: #b52b66;
+
+    font-size: 14px;
+}
+
+
+.pcos-main-insight p {
+    margin: 0;
+
+    color: #526579;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   WHY
+   ========================================================= */
+
+.pcos-why-box {
+    margin-top: 12px;
+
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e3e9ef;
+
+    border-radius: 10px;
+
+    color: #526579;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+.pcos-why-box strong {
+    color: #172033;
+}
+
+
+/* =========================================================
+   HISTORY QUESTIONS
+   ========================================================= */
+
+.pcos-question-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.pcos-question-buttons button {
+    padding: 10px 14px;
+
+    border: 1px solid #ead6df;
+
+    border-radius: 10px;
+
+    background: #fff7fa;
+
+    color: #b52b66;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.pcos-question-buttons button:hover {
+    background: #ffe9f1;
+
+    border-color: #e83e8c;
+}
+
+
+.pcos-history-answer {
+    display: none;
+
+    margin-top: 16px;
+
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8ee;
+
+    border-radius: 10px;
+
+    color: #526579;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+.pcos-history-answer.show {
+    display: block;
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.pcos-timeline {
+    position: relative;
+
+    margin: 5px 0 0 12px;
+
+    padding-left: 25px;
+
+    border-left: 3px solid #f0b8ce;
+}
+
+
+.pcos-timeline-item {
+    position: relative;
+
+    margin-bottom: 20px;
+}
+
+
+.pcos-timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+
+.pcos-timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: -33px;
+
+    top: 3px;
+
+    width: 12px;
+    height: 12px;
+
+    background: #e83e8c;
+
+    border: 3px solid #fff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 1px #e83e8c;
+}
+
+
+.pcos-timeline-date {
+    margin-bottom: 5px;
+
+    color: #c62e70;
+
+    font-size: 13px;
+
+    font-weight: 750;
+}
+
+
+.pcos-timeline-content {
+    padding: 13px 15px;
+
+    background: #fafbfd;
+
+    border: 1px solid #e4e9ef;
+
+    border-radius: 10px;
+
+    color: #526579;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DOCTOR SUMMARY
+   ========================================================= */
+
+.pcos-doctor-summary {
+    margin-top: 18px;
+
+    padding: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #dfe7ee;
+
+    border-radius: 12px;
+
+    color: #43576b;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.pcos-doctor-summary h4 {
+    margin: 0 0 12px;
+
+    color: #172033;
+
+    font-size: 17px;
+}
+
+
+.pcos-summary-row {
+    margin-bottom: 7px;
+}
+
+
+.pcos-summary-note {
+    margin-top: 14px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid #e1e7ed;
+
+    color: #6f7f8f;
+}
+
+
+/* =========================================================
+   MEDICAL NOTE
+   ========================================================= */
+
+.pcos-medical-note {
+    margin: 5px 0 25px;
+
+    padding: 13px 16px;
+
+    background: #fff8e8;
+
+    border: 1px solid #f0dfb8;
+
+    border-radius: 10px;
+
+    color: #765c27;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .pcos-symptom-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .pcos-health-overview {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .pcos-compass-launch-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .pcos-open-btn {
+        width: 100%;
+    }
+
+    .pcos-two-column {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .pcos-symptom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pcos-health-overview {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pcos-box {
+        padding: 18px;
+    }
+
+    .pcos-compass-header h2 {
+        font-size: 21px;
+    }
+
+}

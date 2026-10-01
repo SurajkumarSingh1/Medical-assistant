@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MediAssist - Health Tools</title>
+
+    <!-- GLOBAL THEME CSS -->
+    <link rel="stylesheet" href="css/health-tools.css">
+    <link rel="stylesheet" href="css/common.css">
+
+    <style>
+
+        /* ================= GENERAL ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        body {
+            background: #f4f8fc;
+            color: #172b4d;
+            min-height: 100vh;
+        }
+
+
+
+        /* ================= SIDEBAR ================= */
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+
+            width: 264px;
+            height: 100vh;
+
+            background: #071d3a;
+            color: white;
+
+            padding: 26px 16px;
+
+            z-index: 1000;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        /* ================= LOGO ================= */
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 0 14px;
+            margin-bottom: 42px;
+        }
+
+
+        .logo-circle {
+            width: 42px;
+            height: 42px;
+
+            background: #168bea;
+
+            border-radius: 9px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 28px;
+            font-weight: bold;
+
+            color: white;
+        }
+
+
+        .logo-area > span {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+        }
+
+
+        .logo-area > span > span {
+            color: #168bea;
+        }
+
+
+
+        /* ================= NAVIGATION ================= */
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+
+        .sidebar-nav a {
+            width: 100%;
+            height: 51px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 16px;
+
+            padding: 0 20px;
+
+            color: white;
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-size: 17px;
+            font-weight: 500;
+
+            transition: 0.2s ease;
+        }
+
+
+        .sidebar-nav a:hover {
+            background: rgba(24, 139, 234, 0.18);
+        }
+
+
+        .sidebar-nav a.active {
+            background: #168bea;
+            font-weight: 700;
+        }
+
+
+        .sidebar-nav a .nav-icon {
+            width: 24px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+
+
+        /* ================= LOGOUT ================= */
+
+        .logout {
+            margin-top: auto;
+
+            width: 100%;
+            height: 51px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 16px;
+
+            padding: 0 20px;
+
+            color: #ff5555;
+
+            font-size: 17px;
+            font-weight: 500;
+
+            cursor: pointer;
+
+            border-radius: 10px;
+
+            transition: 0.2s ease;
+        }
+
+
+        .logout:hover {
+            background: rgba(255, 80, 80, 0.12);
+        }
+
+
+
+        /* ================= MAIN CONTENT ================= */
+
+        .main-content {
+            margin-left: 264px;
+            min-height: 100vh;
+        }
+
+
+
+        /* ================= TOPBAR ================= */
+
+        .topbar {
+            height: 105px;
+
+            background: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 42px;
+
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+
+        .topbar h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+
+        .topbar p {
+            color: #718096;
+            font-size: 16px;
+        }
+
+
+
+        /* ================= PROFILE ================= */
+
+        .profile-mini {
+            display: flex;
+            align-items: center;
+
+            gap: 18px;
+
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+
+        .notification {
+            font-size: 23px;
+            cursor: pointer;
+        }
+
+
+        .avatar {
+            width: 44px;
+            height: 44px;
+
+            background: #e5f1ff;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 22px;
+        }
+
+
+
+        /* ================= CONTENT ================= */
+
+        .health-container {
+            padding: 48px 43px;
+        }
+
+
+
+        /* ================= TOOLS GRID ================= */
+
+        .tools-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 28px;
+        }
+
+
+
+        /* ================= TOOL CARD ================= */
+
+        .tool-card {
+            background: white;
+
+            min-height: 275px;
+
+            border-radius: 18px;
+
+            padding: 32px;
+
+            box-shadow:
+                0 8px 25px rgba(20, 50, 90, 0.08);
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            transition: 0.2s ease;
+        }
+
+
+        .tool-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px rgba(20, 50, 90, 0.12);
+        }
+
+
+
+        /* ================= TOOL ICON ================= */
+
+        .tool-icon {
+            width: 60px;
+            height: 60px;
+
+            background: #eaf4ff;
+
+            border-radius: 14px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 31px;
+
+            margin-bottom: 18px;
+        }
+
+
+
+        /* ================= TOOL TEXT ================= */
+
+        .tool-card h2 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+
+        .tool-card p {
+            color: #66758a;
+
+            font-size: 18px;
+
+            line-height: 1.5;
+
+            margin-bottom: 25px;
+        }
+
+
+
+        /* ================= TOOL BUTTON ================= */
+
+        .tool-btn {
+            margin-top: auto;
+
+            background: #168bea;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 8px;
+
+            padding: 12px 22px;
+
+            font-size: 16px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        .tool-btn:hover {
+            background: #0878d1;
+        }
+
+
+        .tool-btn:active {
+            transform: scale(0.98);
+        }
+
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+                width: 220px;
+            }
+
+            .main-content {
+                margin-left: 220px;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                padding: 0 25px;
+            }
+
+            .health-container {
+                padding: 30px 25px;
+            }
+
+        }
+
+
+
+        @media (max-width: 700px) {
+
+            .sidebar {
+                width: 75px;
+                padding: 20px 10px;
+            }
+
+            .logo-area {
+                justify-content: center;
+                padding: 0;
+            }
+
+            .logo-area > span {
+                display: none;
+            }
+
+            .sidebar-nav a {
+                justify-content: center;
+                padding: 0;
+            }
+
+            .sidebar-nav a > span:not(.nav-icon) {
+                display: none;
+            }
+
+            .logout {
+                justify-content: center;
+                padding: 0;
+            }
+
+            .logout span:last-child {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 75px;
+            }
+
+            .topbar {
+                height: auto;
+                padding: 20px;
+            }
+
+            .topbar h1 {
+                font-size: 25px;
+            }
+
+            .profile-mini > span {
+                display: none;
+            }
+
+            .health-container {
+                padding: 20px;
+            }
+
+            .tool-card {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         SIDEBAR
+    =================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo-area">
+
+            <div class="logo-circle">
+                ✚
+            </div>
+
+            <span>
+                Medi<span>Assist</span>
+            </span>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             NAVIGATION
+        =================================================== -->
+
+        <nav class="sidebar-nav">
+
+
+            <!-- Dashboard -->
+
+            <a href="dashboard.html">
+
+                <span class="nav-icon">
+                    🏠
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+
+            <!-- AI Chat -->
+
+            <a href="chat.html">
+
+                <span class="nav-icon">
+                    💬
+                </span>
+
+                <span>
+                    AI Chat
+                </span>
+
+            </a>
+
+
+
+            <!-- Symptom Checker -->
+
+            <a href="symptom-checker.html">
+
+                <span class="nav-icon">
+                    🩺
+                </span>
+
+                <span>
+                    Symptom Checker
+                </span>
+
+            </a>
+            <!-- Report Scanner -->
+            <a href="report-scanner.html">
+                <span>📄</span>
+                <span>Report Scanner</span>
+            </a>
+            <a href="period-care.html">
+
+    <span class="nav-icon">🌸</span>
+
+    <span>Period Care</span>
+
+</a>
+
+
+
+            <!-- History -->
+
+            <a href="history.html">
+
+                <span class="nav-icon">
+                    🕘
+                </span>
+
+                <span>
+                    History
+                </span>
+
+            </a>
+
+
+
+            <!-- Reminders -->
+
+            <a href="reminder.html">
+
+                <span class="nav-icon">
+                    ⏰
+                </span>
+
+                <span>
+                    Reminders
+                </span>
+
+            </a>
+
+
+
+            <!-- Health Tools -->
+
+            <a
+                href="health-tools.html"
+                class="active"
+            >
+
+                <span class="nav-icon">
+                    🧰
+                </span>
+
+                <span>
+                    Health Tools
+                </span>
+
+            </a>
+
+
+
+            <!-- Profile -->
+
+            <a href="profile.html">
+
+                <span class="nav-icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+
+            <!-- Settings -->
+
+            <a href="settings.html">
+
+                <span class="nav-icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+
+            <!-- Emergency -->
+
+            <a href="emergency.html">
+
+                <span class="nav-icon">
+                    🚨
+                </span>
+
+                <span>
+                    Emergency
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- ==================================================
+             LOGOUT
+        =================================================== -->
+
+        <div
+            class="logout"
+            id="logoutBtn"
+        >
+
+            <span>
+                🚪
+            </span>
+
+            <span>
+                Logout
+            </span>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ==================================================
+         MAIN CONTENT
+    =================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- ==================================================
+             TOP BAR
+        =================================================== -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <h1>
+                    Health Tools
+                </h1>
+
+                <p>
+                    Useful tools for your general health information
+                </p>
+
+            </div>
+
+
+
+            <div class="profile-mini">
+
+
+                <div class="notification">
+                    🔔
+                </div>
+
+
+                <div class="avatar">
+                    👩
+                </div>
+
+
+                <span id="userName">
+                    User
+                </span>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- ==================================================
+             HEALTH TOOLS
+        =================================================== -->
+
+        <section class="health-container">
+
+
+            <div class="tools-grid">
+
+
+                <!-- ==================================================
+                     BMI CALCULATOR
+                =================================================== -->
+
+                <div class="tool-card">
+
+
+                    <div class="tool-icon">
+                        ⚖️
+                    </div>
+
+
+                    <h2>
+                        BMI Calculator
+                    </h2>
+
+
+                    <p>
+                        Calculate your Body Mass Index
+                        using your height and weight.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="tool-btn"
+                        onclick="openBMI()"
+                    >
+
+                        Open Calculator
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     WATER INTAKE
+                =================================================== -->
+
+                <div class="tool-card">
+
+
+                    <div class="tool-icon">
+                        💧
+                    </div>
+
+
+                    <h2>
+                        Water Intake
+                    </h2>
+
+
+                    <p>
+                        Calculate an approximate daily
+                        water intake based on your weight.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="tool-btn"
+                        onclick="openWater()"
+                    >
+
+                        Open Calculator
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     HEART RATE
+                =================================================== -->
+
+                <div class="tool-card">
+
+
+                    <div class="tool-icon">
+                        ❤️
+                    </div>
+
+
+                    <h2>
+                        Heart Rate
+                    </h2>
+
+
+                    <p>
+                        Learn about normal resting
+                        heart-rate ranges and general
+                        information.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="tool-btn"
+                        onclick="openHeartRate()"
+                    >
+
+                        View Information
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     CALORIE CALCULATOR
+                =================================================== -->
+
+                <div class="tool-card">
+
+
+                    <div class="tool-icon">
+                        🔥
+                    </div>
+
+
+                    <h2>
+                        Calorie Calculator
+                    </h2>
+
+
+                    <p>
+                        Get an approximate daily calorie
+                        requirement based on basic information.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="tool-btn"
+                        onclick="openCalories()"
+                    >
+
+                        Open Calculator
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+
+    <!-- GLOBAL THEME -->
+
+    <script src="js/theme.js"></script>
+
+
+    <!-- HEALTH TOOLS JAVASCRIPT -->
+
+    <script src="js/health-tools.js"></script>
+
+
+</body>
+
+</html>
