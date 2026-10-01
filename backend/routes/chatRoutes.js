@@ -1,6 +1,6 @@
 import express from "express";
 
-import Chat from "../models/Chat.js";
+import Chat from "../models/chat.js";
 
 import protect from "../middleware/auth.js";
 
