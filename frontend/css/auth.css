@@ -1,442 +1,523 @@
+/* =========================================================
+   MEDIASSIST AUTHENTICATION STYLES
+   Login + Register
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
-    min-height: 100vh;
-    background: #eef6ff;
+    background: #f5f9ff;
     color: #172554;
 }
 
-/* ================= MAIN PAGE ================= */
 
-.login-page {
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.auth-container {
+    width: 100%;
     min-height: 100vh;
     display: flex;
 }
 
-/* ================= LEFT MEDICAL SIDE ================= */
 
-.medical-side {
+/* =========================================================
+   LOGIN / REGISTER LEFT BLUE SIDE
+========================================================= */
+
+.medical-side,
+.auth-image {
     width: 58%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1198f5, #2455d9);
+
     position: relative;
     overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #1198f5 0%,
+        #2455d9 100%
+    );
+
     color: white;
 }
 
-.medical-side::before {
+
+/* Decorative circle - bottom left */
+
+.medical-side::before,
+.auth-image::before {
     content: "";
     position: absolute;
+
     width: 700px;
     height: 700px;
+
     border-radius: 50%;
+
     background: rgba(255, 255, 255, 0.08);
+
     left: -250px;
-    bottom: -300px;
+    bottom: -350px;
+
+    pointer-events: none;
 }
 
-.medical-side::after {
+
+/* Decorative circle - top right */
+
+.medical-side::after,
+.auth-image::after {
     content: "";
     position: absolute;
+
     width: 500px;
     height: 500px;
+
     border-radius: 50%;
+
     background: rgba(255, 255, 255, 0.07);
-    right: -200px;
-    top: -200px;
+
+    right: -180px;
+    top: -180px;
+
+    pointer-events: none;
 }
+
+
+/* =========================================================
+   LOGIN LEFT CONTENT
+========================================================= */
 
 .medical-content {
+    width: 100%;
+    min-height: 100vh;
+
     position: relative;
-    z-index: 2;
-    max-width: 700px;
-    margin: auto;
-    padding: 55px;
+    z-index: 5;
+
+    padding: 55px 70px;
+
+    display: flex;
+    flex-direction: column;
 }
 
-/* ================= LOGO ================= */
+
+/* =========================================================
+   BRAND
+========================================================= */
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 60px;
-}
 
-.brand span span {
-    color: #dff4ff;
+    gap: 12px;
+
+    margin-bottom: 55px;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: white;
 }
 
 .brand-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 14px;
-    background: white;
-    color: #147fe5;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 22px;
+    font-size: 30px;
 }
 
-/* ================= HEADING ================= */
+.brand span {
+    color: white;
+}
+
+.brand span span {
+    font-weight: 400;
+    color: white;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
 
 .medical-content h1 {
-    font-size: 52px;
-    line-height: 1.12;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
+    position: relative;
+    z-index: 5;
+
+    max-width: 600px;
+
+    font-size: 58px;
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
+    color: white;
 }
 
 .medical-content h1 span {
-    color: #d9f3ff;
+    color: white;
 }
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .brand-description {
-    font-size: 17px;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.88);
-    max-width: 600px;
+    position: relative;
+    z-index: 5;
+
+    max-width: 610px;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.92);
 }
 
-/* ================= MEDICAL ILLUSTRATION ================= */
+
+/* =========================================================
+   MEDICAL ILLUSTRATION
+========================================================= */
 
 .medical-illustration {
-    height: 290px;
     position: relative;
-    margin-top: 35px;
+    z-index: 5;
+
+    width: 100%;
+    height: 360px;
+
+    margin-top: 15px;
+
+    flex: 1;
+    min-height: 300px;
 }
 
-/* Phone */
 
-.phone {
-    position: absolute;
-    left: 45%;
-    top: 10px;
-
-    width: 155px;
-    height: 250px;
-
-    background: #102d91;
-    border: 6px solid rgba(255, 255, 255, 0.5);
-    border-radius: 25px;
-
-    transform: rotate(-5deg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.phone-top {
-    width: 55px;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-
-    margin: 9px auto;
-}
-
-.phone-screen {
-    margin: 10px;
-    height: 205px;
-    background: #e8f5ff;
-    border-radius: 14px;
-    position: relative;
-    padding: 15px;
-}
-
-.medical-cross {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #d6ecff;
-    color: #e84d5b;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 25px;
-}
-
-.health-line {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    margin-top: 25px;
-}
-
-.health-line span {
-    width: 8px;
-    height: 25px;
-    background: #267ee9;
-    border-radius: 5px;
-}
-
-.health-line span:nth-child(2),
-.health-line span:nth-child(5) {
-    height: 40px;
-}
-
-.health-line span:nth-child(3) {
-    height: 15px;
-}
-
-.phone-card {
-    margin-top: 20px;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    color: #267ee9;
-}
-
-/* Doctor */
+/* =========================================================
+   DOCTOR
+========================================================= */
 
 .doctor {
     position: absolute;
-    left: 12%;
-    bottom: 0;
-    width: 145px;
+
+    left: 24%;
+    bottom: 15px;
+
+    width: 260px;
+    height: 300px;
 }
 
+
+/* Head */
+
 .doctor-head {
-    width: 70px;
-    height: 70px;
-    background: #f3bd9b;
+    position: absolute;
+
+    width: 105px;
+    height: 105px;
+
+    left: 80px;
+    top: 5px;
+
+    background: #ffd2b3;
+
     border-radius: 50%;
-    margin: auto;
-    position: relative;
+
+    z-index: 3;
 }
+
+
+/* Hair */
 
 .hair {
     position: absolute;
-    width: 72px;
-    height: 35px;
-    background: #252a66;
-    border-radius: 50px 50px 20px 20px;
-    top: -5px;
-    left: -1px;
+
+    width: 105px;
+    height: 58px;
+
+    top: -8px;
+    left: 0;
+
+    background: #172554;
+
+    border-radius: 60px 60px 20px 20px;
 }
 
-.doctor-body {
-    width: 130px;
-    height: 120px;
-    margin: -5px auto 0;
-    background: white;
-    border-radius: 50px 50px 15px 15px;
-    position: relative;
+
+/* Face */
+
+.face::before,
+.face::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    top: 48px;
+
+    background: #172554;
+
+    border-radius: 50%;
 }
+
+.face::before {
+    left: 30px;
+}
+
+.face::after {
+    right: 30px;
+}
+
+
+/* Body */
+
+.doctor-body {
+    position: absolute;
+
+    width: 210px;
+    height: 180px;
+
+    left: 25px;
+    bottom: 0;
+
+    background: white;
+
+    border-radius: 100px 100px 20px 20px;
+}
+
+
+/* Shirt */
+
+.shirt {
+    position: absolute;
+
+    width: 80px;
+    height: 150px;
+
+    left: 65px;
+    top: 15px;
+
+    background: #38a3ff;
+
+    border-radius: 20px;
+}
+
+
+/* Coat */
 
 .coat {
     position: absolute;
-    left: 15px;
-    right: 15px;
-    top: 0;
-    bottom: 0;
-    border-left: 3px solid #d7e8f7;
-    border-right: 3px solid #d7e8f7;
-}
 
-.shirt {
-    width: 40px;
-    height: 60px;
-    background: #3d75d9;
-    margin: auto;
-}
+    width: 90px;
+    height: 170px;
 
-.doctor-arm {
-    width: 100px;
-    height: 25px;
+    left: 10px;
+
     background: white;
-    border-radius: 20px;
-    position: absolute;
-    right: -60px;
-    top: 90px;
-    transform: rotate(-15deg);
+
+    border-radius: 30px 0 20px 20px;
 }
+
 
 /* Stethoscope */
 
-.stethoscope {
+.doctor::before {
+    content: "";
+
     position: absolute;
-    left: 35%;
-    bottom: 30px;
-    width: 120px;
+
+    width: 80px;
     height: 100px;
+
+    left: 90px;
+    top: 105px;
+
+    border: 5px solid #172554;
+    border-top: none;
+
+    border-radius: 0 0 50px 50px;
+
+    z-index: 5;
 }
 
-.stetho-circle {
-    width: 45px;
-    height: 45px;
-    border: 4px solid #dceeff;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 0;
-}
 
-.stetho-circle.one {
-    left: 15px;
-}
-
-.stetho-circle.two {
-    right: 15px;
-}
-
-.stetho-line {
-    width: 65px;
-    height: 65px;
-    border-bottom: 4px solid #dceeff;
-    border-radius: 50%;
-    position: absolute;
-    left: 27px;
-    top: 0;
-}
-
-/* ================= FLOATING CARDS ================= */
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
 
 .float-card {
     position: absolute;
+    z-index: 20;
 
     display: flex;
     align-items: center;
+
     gap: 10px;
 
-    background: rgba(255, 255, 255, 0.95);
-    color: #172554;
+    padding: 14px 18px;
 
-    padding: 12px 18px;
-    border-radius: 14px;
+    border-radius: 16px;
 
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+    color: white;
 }
 
 .float-card i {
-    color: #187ce5;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .float-card small {
     display: block;
-    color: #64748b;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .float-card strong {
-    font-size: 13px;
+    font-size: 16px;
 }
+
+
+/* Patient */
 
 .patient-card {
-    left: 3%;
-    top: 20px;
+    left: 0;
+    top: 30px;
 }
 
+
+/* AI */
+
 .ai-card {
-    right: 2%;
-    top: 100px;
+    right: 0;
+    top: 75px;
 }
+
+
+/* =========================================================
+   HEARTBEAT CARD
+========================================================= */
 
 .heartbeat-card {
     position: absolute;
-    right: 5%;
-    bottom: 25px;
+    z-index: 20;
 
-    width: 125px;
-    height: 65px;
+    right: 60px;
+    bottom: 120px;
 
-    background: rgba(255, 255, 255, 0.95);
+    width: 120px;
+    height: 55px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.heartbeat-card i {
+    color: #ff5d72;
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   TEMPERATURE
+========================================================= */
+
+.temperature {
+    position: absolute;
+    z-index: 20;
+
+    right: 70px;
+    bottom: 50px;
+
+    padding: 12px 18px;
+
+    background: rgba(255, 255, 255, 0.18);
+
     border-radius: 14px;
 
     display: flex;
     align-items: center;
+
     gap: 8px;
 
-    padding: 12px;
+    backdrop-filter: blur(8px);
 
-    color: #e84d5b;
+    font-size: 17px;
+
+    color: white;
 }
 
-.heartbeat-line {
-    width: 65px;
-    height: 25px;
 
-    border-bottom: 3px solid #e84d5b;
-
-    transform: skew(-30deg);
-}
-
-/* Pills */
-
-.pill {
-    position: absolute;
-    width: 42px;
-    height: 17px;
-    border-radius: 20px;
-    background: #ef6070;
-    transform: rotate(40deg);
-}
-
-.pill-one {
-    left: 25%;
-    top: 60px;
-}
-
-.pill-two {
-    left: 29%;
-    top: 40px;
-    transform: rotate(-25deg);
-}
-
-/* Temperature */
-
-.temperature {
-    position: absolute;
-    left: 5%;
-    bottom: 20px;
-
-    background: rgba(255, 255, 255, 0.95);
-    color: #334155;
-
-    padding: 10px 15px;
-    border-radius: 12px;
-
-    display: flex;
-    gap: 7px;
-    align-items: center;
-}
-
-.temperature i {
-    color: #e84d5b;
-}
-
-/* ================= FEATURES ================= */
+/* =========================================================
+   FEATURES
+========================================================= */
 
 .features {
+    position: relative;
+    z-index: 10;
+
     display: flex;
-    gap: 28px;
-    margin-top: 10px;
+    justify-content: space-between;
+
+    max-width: 620px;
+
+    margin-top: auto;
+    padding-top: 20px;
 }
 
 .feature {
     display: flex;
     align-items: center;
-    gap: 8px;
 
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.9);
+    gap: 10px;
+
+    font-size: 16px;
+
+    color: white;
 }
 
 .feature i {
-    font-size: 15px;
+    font-size: 22px;
+    color: white;
 }
 
-/* ================= RIGHT LOGIN SIDE ================= */
+
+/* =========================================================
+   LOGIN RIGHT SIDE
+========================================================= */
 
 .login-side {
     width: 42%;
@@ -446,108 +527,118 @@ body {
     align-items: center;
     justify-content: center;
 
-    padding: 40px;
+    padding: 50px;
 
     background: #f5f9ff;
 }
 
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
 .login-card {
     width: 100%;
-    max-width: 460px;
-
-    background: white;
-
-    padding: 45px;
-
-    border-radius: 24px;
-
-    box-shadow: 0 20px 60px rgba(29, 78, 216, 0.12);
-
-    position: relative;
+    max-width: 470px;
 }
 
-/* Security */
+
+/* Security icon */
 
 .security-icon {
-    position: absolute;
-    right: 35px;
-    top: 35px;
-
-    width: 48px;
-    height: 48px;
-
-    border-radius: 14px;
-
-    background: #e8f4ff;
-    color: #1676df;
+    width: 45px;
+    height: 45px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 22px;
+    margin-bottom: 25px;
+
+    color: #14255c;
+
+    font-size: 28px;
 }
 
-/* Heading */
+
+/* =========================================================
+   LOGIN HEADING
+========================================================= */
 
 .login-heading span {
-    color: #64748b;
-    font-size: 20px;
+    font-size: 21px;
+    color: #172554;
 }
 
 .login-heading h2 {
-    font-size: 34px;
-    margin-top: 4px;
+    margin-top: 5px;
+
+    font-size: 42px;
+
     color: #14255c;
 }
 
 .login-subtitle {
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 35px;
+
+    font-size: 16px;
 
     color: #64748b;
-    line-height: 1.5;
 }
 
-/* ================= INPUTS ================= */
+
+/* =========================================================
+   INPUT GROUP
+========================================================= */
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .input-group label {
     display: block;
 
-    font-size: 14px;
+    margin-bottom: 9px;
+
+    font-size: 15px;
     font-weight: 600;
 
-    color: #334155;
-
-    margin-bottom: 8px;
+    color: #172554;
 }
 
+
+/* Input */
+
 .input-box {
-    height: 52px;
+    height: 64px;
 
     display: flex;
     align-items: center;
 
-    border: 1px solid #dbe5f1;
-    border-radius: 12px;
+    gap: 14px;
 
-    padding: 0 15px;
+    padding: 0 18px;
+
+    background: white;
+
+    border: 1px solid #dbe5f1;
+
+    border-radius: 14px;
 
     transition: 0.2s;
 }
 
 .input-box:focus-within {
     border-color: #1678e5;
-    box-shadow: 0 0 0 4px rgba(22, 120, 229, 0.1);
+
+    box-shadow:
+        0 0 0 4px rgba(22, 120, 229, 0.1);
 }
 
-.input-box > i {
-    color: #8aa0b8;
-    margin-right: 10px;
+.input-box i {
+    color: #64748b;
+    font-size: 20px;
 }
 
 .input-box input {
@@ -556,86 +647,96 @@ body {
     border: none;
     outline: none;
 
-    font-size: 14px;
-    color: #1e293b;
+    background: transparent;
+
+    font-size: 15px;
+
+    color: #172554;
 }
 
 .input-box input::placeholder {
-    color: #9aaabd;
+    color: #94a3b8;
 }
+
+
+/* Password toggle */
 
 .password-toggle {
     border: none;
+
     background: transparent;
 
     cursor: pointer;
 
     color: #64748b;
 
-    font-size: 16px;
+    font-size: 18px;
 }
 
-/* ================= OPTIONS ================= */
+
+/* =========================================================
+   LOGIN OPTIONS
+========================================================= */
 
 .login-options {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
     margin: 5px 0 25px;
-
-    font-size: 13px;
 }
 
 .remember {
     display: flex;
     align-items: center;
-    gap: 7px;
+
+    gap: 9px;
 
     color: #64748b;
 
-    cursor: pointer;
+    font-size: 14px;
 }
 
 .remember input {
+    width: 20px;
+    height: 20px;
+
     accent-color: #1678e5;
 }
 
 .login-options a {
     color: #1671d9;
-    text-decoration: none;
+
     font-weight: 600;
+
+    text-decoration: none;
 }
 
 .login-options a:hover {
     text-decoration: underline;
 }
 
-/* ================= ERROR ================= */
 
-.message {
-    font-size: 13px;
-    margin-bottom: 12px;
-}
-
-.error-message {
-    color: #dc2626;
-}
-
-/* ================= LOGIN BUTTON ================= */
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
 
 .login-button {
     width: 100%;
-    height: 54px;
+    height: 66px;
 
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
 
-    background: linear-gradient(135deg, #167ee5, #2455d9);
+    background: linear-gradient(
+        135deg,
+        #1686eb,
+        #2455d9
+    );
 
     color: white;
 
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
 
     cursor: pointer;
@@ -643,28 +744,35 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+
+    gap: 15px;
+
+    box-shadow:
+        0 15px 35px rgba(22, 126, 229, 0.25);
 
     transition: 0.2s;
-
-    box-shadow: 0 10px 25px rgba(22, 126, 229, 0.25);
 }
 
 .login-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(22, 126, 229, 0.3);
+
+    box-shadow:
+        0 18px 40px rgba(22, 126, 229, 0.3);
 }
 
-/* ================= REGISTER ================= */
+
+/* =========================================================
+   REGISTER LINK
+========================================================= */
 
 .register-text {
     text-align: center;
 
-    margin-top: 25px;
+    margin-top: 30px;
 
     color: #64748b;
 
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .register-text a {
@@ -674,127 +782,462 @@ body {
 
     text-decoration: none;
 
-    margin-left: 4px;
+    margin-left: 5px;
 }
 
 .register-text a:hover {
     text-decoration: underline;
 }
 
-/* ================= SECURITY NOTE ================= */
+
+/* =========================================================
+   SECURITY NOTE
+========================================================= */
 
 .security-note {
-    margin-top: 25px;
-    padding-top: 20px;
-
-    border-top: 1px solid #edf2f7;
+    margin-top: 38px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    gap: 8px;
+    gap: 10px;
 
     color: #64748b;
 
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .security-note i {
-    color: #159447;
+    color: #1678e5;
 }
 
-/* ================= RESPONSIVE ================= */
+
+/* =========================================================
+   REGISTER PAGE
+========================================================= */
+
+.auth-box {
+    width: 42%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 50px;
+
+    background: #f5f9ff;
+}
+
+
+/* Register logo */
+
+.auth-box .logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+
+    font-size: 26px;
+    font-weight: 700;
+
+    color: #14255c;
+}
+
+.auth-box .logo span {
+    color: #14255c;
+}
+
+
+/* Register heading */
+
+.auth-box h2 {
+    margin-bottom: 8px;
+
+    font-size: 34px;
+
+    color: #14255c;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+
+    font-size: 15px;
+
+    color: #64748b;
+}
+
+
+/* Register form */
+
+#registerForm {
+    width: 100%;
+    max-width: 460px;
+}
+
+
+/* Form group */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #334155;
+}
+
+.form-group input {
+    width: 100%;
+    height: 52px;
+
+    padding: 0 15px;
+
+    border: 1px solid #dbe5f1;
+    border-radius: 12px;
+
+    outline: none;
+
+    background: white;
+
+    font-size: 14px;
+
+    color: #1e293b;
+
+    transition: 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #9aaabd;
+}
+
+.form-group input:focus {
+    border-color: #1678e5;
+
+    box-shadow:
+        0 0 0 4px rgba(22, 120, 229, 0.1);
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.terms {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 8px 0 22px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.terms input {
+    width: 16px;
+    height: 16px;
+
+    accent-color: #1678e5;
+
+    cursor: pointer;
+}
+
+.terms label {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   REGISTER BUTTON
+========================================================= */
+
+.auth-button {
+    width: 100%;
+    height: 54px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #167ee5,
+        #2455d9
+    );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(22, 126, 229, 0.25);
+
+    transition: 0.2s;
+}
+
+.auth-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(22, 126, 229, 0.3);
+}
+
+
+/* =========================================================
+   SWITCH LOGIN / REGISTER
+========================================================= */
+
+.switch-auth {
+    max-width: 460px;
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.switch-auth a {
+    color: #1671d9;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    margin-left: 4px;
+}
+
+.switch-auth a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
 
 @media (max-width: 1000px) {
 
-    .medical-side {
+    .medical-side,
+    .auth-image {
         width: 50%;
     }
 
-    .login-side {
+    .login-side,
+    .auth-box {
         width: 50%;
-        padding: 25px;
+        padding: 30px;
     }
 
     .medical-content {
-        padding: 35px;
+        padding: 40px;
     }
 
-    .medical-content h1 {
-        font-size: 40px;
+    .medical-content h1,
+    .auth-image h1 {
+        font-size: 44px;
     }
 
-    .medical-illustration {
+    .doctor {
         transform: scale(0.85);
-        transform-origin: left center;
+        transform-origin: bottom center;
+        left: 15%;
     }
 }
 
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
 @media (max-width: 750px) {
 
-    .login-page {
+    .auth-container {
         flex-direction: column;
     }
 
-    .medical-side {
+    .medical-side,
+    .auth-image {
         width: 100%;
-        min-height: auto;
+        min-height: 650px;
     }
 
-    .login-side {
+    .login-side,
+    .auth-box {
         width: 100%;
         min-height: auto;
-        padding: 25px 15px;
     }
 
     .medical-content {
         padding: 35px 25px;
     }
 
-    .brand {
-        margin-bottom: 30px;
+    .medical-content h1,
+    .auth-image h1 {
+        font-size: 42px;
     }
 
-    .medical-content h1 {
-        font-size: 38px;
+    .login-side {
+        padding: 40px 25px;
     }
 
-    .medical-illustration {
-        transform: scale(0.75);
-        height: 240px;
-        margin-left: 20px;
-    }
-
-    .features {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .login-card {
-        padding: 30px 25px;
+    .auth-box {
+        padding: 40px 25px;
     }
 }
 
-@media (max-width: 450px) {
 
-    .medical-content h1 {
-        font-size: 32px;
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .medical-side,
+    .auth-image {
+        min-height: 550px;
+    }
+
+    .medical-content {
+        padding: 30px 20px;
+    }
+
+    .medical-content h1,
+    .auth-image h1 {
+        font-size: 36px;
     }
 
     .brand-description {
-        font-size: 14px;
+        font-size: 15px;
     }
 
-    .medical-illustration {
-        display: none;
+    .doctor {
+        transform: scale(0.65);
+        left: 5%;
     }
 
-    .login-card {
-        padding: 25px 20px;
+    .float-card {
+        transform: scale(0.8);
+    }
+
+    .features {
+        gap: 10px;
+    }
+
+    .feature {
+        font-size: 12px;
+    }
+
+    .feature i {
+        font-size: 18px;
+    }
+
+    .login-side {
+        padding: 30px 20px;
+    }
+
+    .auth-box {
+        padding: 30px 20px;
     }
 
     .login-heading h2 {
+        font-size: 34px;
+    }
+
+    .auth-box h2 {
         font-size: 28px;
     }
+}
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.auth-container {
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+}
+/* =================================================
+   REGISTER PAGE ONLY - FIT EVERYTHING IN ONE SCREEN
+   ================================================= */
+
+.auth-box:has(#registerForm) {
+    height: 100vh;
+    min-height: 100vh;
+    padding: 18px 50px;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Register logo */
+.auth-box:has(#registerForm) .logo {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+/* Register heading */
+.auth-box:has(#registerForm) h2 {
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
+.auth-box:has(#registerForm) .subtitle {
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+/* Register form */
+#registerForm {
+    max-width: 520px;
+}
+
+/* Reduce spacing between fields */
+#registerForm .form-group {
+    margin-bottom: 9px;
+}
+
+#registerForm .form-group label {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+/* Smaller input height */
+#registerForm .form-group input {
+    height: 40px;
+    border-radius: 10px;
+}
+
+/* Terms */
+#registerForm .terms {
+    margin: 7px 0 12px;
+    font-size: 12px;
+}
+
+/* Register button */
+#registerForm .auth-button {
+    height: 45px;
+}
+
+/* Login link */
+.auth-box:has(#registerForm) .switch-auth {
+    margin-top: 10px;
+    font-size: 12px;
 }

@@ -1,12 +1,24 @@
 /* =========================================================
    MEDIASSIST - COMMON SIDEBAR
-   MASTER SIDEBAR DESIGN
-   Reference: REPORT SCANNER
+   RESPONSIVE MASTER SIDEBAR
    ========================================================= */
 
 * {
     box-sizing: border-box;
 }
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
 
 /* =========================================================
    SIDEBAR
@@ -14,7 +26,6 @@
 
 .sidebar {
     position: fixed !important;
-
     top: 0 !important;
     left: 0 !important;
     bottom: 0 !important;
@@ -54,7 +65,6 @@
     gap: 10px !important;
 
     padding: 0 14px !important;
-
     margin: 0 0 35px 0 !important;
 
     color: #ffffff !important;
@@ -77,7 +87,6 @@
     border-radius: 9px !important;
 
     background: #ffffff !important;
-
     color: #1597e5 !important;
 
     display: flex !important;
@@ -128,12 +137,10 @@
     width: 100% !important;
 
     min-width: 0 !important;
-
     min-height: 45px !important;
     height: 45px !important;
 
     padding: 10px 14px !important;
-
     margin: 0 !important;
 
     border-radius: 9px !important;
@@ -144,7 +151,6 @@
     gap: 13px !important;
 
     color: #dcecff !important;
-
     background: transparent !important;
 
     text-decoration: none !important;
@@ -181,7 +187,6 @@
     justify-content: center !important;
 
     font-size: 16px !important;
-
     line-height: 1 !important;
 
     flex-shrink: 0 !important;
@@ -194,7 +199,6 @@
 
 .sidebar .sidebar-nav a:hover {
     background: #123d6d !important;
-
     color: #ffffff !important;
 
     transform: translateX(2px) !important;
@@ -207,7 +211,6 @@
 
 .sidebar .sidebar-nav a.active {
     background: #1597e5 !important;
-
     color: #ffffff !important;
 
     font-weight: 700 !important;
@@ -242,7 +245,6 @@
     gap: 13px !important;
 
     color: #ff777d !important;
-
     background: transparent !important;
 
     text-decoration: none !important;
@@ -264,7 +266,6 @@
 
 .sidebar .logout:hover {
     background: rgba(255, 80, 90, 0.10) !important;
-
     color: #ff8b90 !important;
 }
 
@@ -285,7 +286,7 @@
 
 
 /* =========================================================
-   PREVENT PAGE CSS FROM CHANGING SIDEBAR WIDTH
+   DESKTOP SIDEBAR WIDTH
    ========================================================= */
 
 body > .sidebar,
@@ -298,20 +299,40 @@ body > aside.sidebar {
 
 /* =========================================================
    TABLET
-   Keep the same sidebar proportions until mobile.
    ========================================================= */
 
 @media (max-width: 1000px) {
 
+    body > .sidebar,
+    body > aside.sidebar {
+        width: 240px !important;
+        min-width: 240px !important;
+        max-width: 240px !important;
+    }
+
     .sidebar {
-        width: 268px !important;
-        min-width: 268px !important;
-        max-width: 268px !important;
+        width: 240px !important;
+        min-width: 240px !important;
+        max-width: 240px !important;
+
+        padding: 24px 12px 18px !important;
+    }
+
+    .sidebar .logo-area {
+        padding: 0 10px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .sidebar .sidebar-nav a {
+        padding: 9px 10px !important;
+        gap: 10px !important;
+        font-size: 13px !important;
     }
 
     .main-content {
-        margin-left: 268px !important;
-        width: calc(100% - 268px) !important;
+        margin-left: 240px !important;
+
+        width: calc(100% - 240px) !important;
     }
 }
 
@@ -322,11 +343,14 @@ body > aside.sidebar {
 
 @media (max-width: 760px) {
 
-    .sidebar {
+    /* Remove desktop fixed sidebar */
+    body > .sidebar,
+    body > aside.sidebar {
         position: relative !important;
 
         top: auto !important;
         left: auto !important;
+        right: auto !important;
         bottom: auto !important;
 
         width: 100% !important;
@@ -334,47 +358,181 @@ body > aside.sidebar {
         max-width: 100% !important;
 
         height: auto !important;
+    }
 
-        padding: 15px !important;
+    .sidebar {
+        position: relative !important;
+
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+
+        padding: 14px 14px 12px !important;
 
         overflow: visible !important;
     }
 
+
+    /* Logo */
+
     .sidebar .logo-area {
-        margin-bottom: 15px !important;
+        padding: 0 6px !important;
+
+        margin-bottom: 14px !important;
+
+        gap: 8px !important;
     }
+
+    .sidebar .logo-circle {
+        width: 32px !important;
+        height: 32px !important;
+
+        min-width: 32px !important;
+        max-width: 32px !important;
+
+        font-size: 20px !important;
+    }
+
+    .sidebar .logo-area > span {
+        font-size: 19px !important;
+    }
+
+
+    /* Navigation */
 
     .sidebar .sidebar-nav {
         display: grid !important;
 
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 
-        gap: 5px !important;
+        gap: 6px !important;
+
+        width: 100% !important;
     }
 
     .sidebar .sidebar-nav a {
-        min-height: 40px !important;
-        height: 40px !important;
+        width: 100% !important;
 
-        padding: 8px 10px !important;
+        min-width: 0 !important;
+
+        min-height: 42px !important;
+        height: 42px !important;
+
+        padding: 8px 9px !important;
+
+        gap: 8px !important;
+
+        border-radius: 8px !important;
 
         font-size: 12px !important;
+
+        white-space: nowrap !important;
     }
+
+    .sidebar .nav-icon {
+        width: 18px !important;
+        min-width: 18px !important;
+        max-width: 18px !important;
+
+        height: 18px !important;
+
+        font-size: 14px !important;
+    }
+
+
+    /* Logout */
 
     .sidebar .logout {
-        min-height: 40px !important;
-        height: 40px !important;
+        width: 100% !important;
 
-        margin-top: 10px !important;
+        min-height: 42px !important;
+        height: 42px !important;
 
-        padding: 8px 10px !important;
+        margin-top: 8px !important;
+
+        padding: 8px 9px !important;
+
+        gap: 8px !important;
 
         font-size: 12px !important;
     }
+
+
+    /* Main content */
 
     .main-content {
         margin-left: 0 !important;
 
         width: 100% !important;
+
+        min-width: 0 !important;
+
+        padding: 0 !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .sidebar {
+        padding: 12px 10px !important;
+    }
+
+    .sidebar .logo-area {
+        margin-bottom: 12px !important;
+    }
+
+    .sidebar .sidebar-nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 5px !important;
+    }
+
+    .sidebar .sidebar-nav a {
+        min-height: 38px !important;
+        height: 38px !important;
+
+        padding: 7px 8px !important;
+
+        font-size: 11px !important;
+    }
+
+    .sidebar .nav-icon {
+        width: 17px !important;
+        min-width: 17px !important;
+
+        font-size: 13px !important;
+    }
+
+    .sidebar .logout {
+        min-height: 38px !important;
+        height: 38px !important;
+
+        font-size: 11px !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .sidebar .sidebar-nav a {
+        font-size: 10px !important;
+        padding: 6px !important;
+        gap: 5px !important;
+    }
+
+    .sidebar .nav-icon {
+        width: 15px !important;
+        min-width: 15px !important;
+        font-size: 12px !important;
     }
 }
