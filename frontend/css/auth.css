@@ -1241,3 +1241,59 @@ body {
     margin-top: 10px;
     font-size: 12px;
 }
+
+/* Fix mobile scrolling on login and register pages */
+html {
+    min-height: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    min-height: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.auth-container {
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+}
+
+@media (max-width: 760px) {
+    .auth-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+
+    .medical-side {
+        flex: 0 0 auto;
+        width: 100%;
+        min-height: auto;
+        height: auto;
+        overflow: visible;
+        padding: 30px 24px;
+    }
+
+    .login-side {
+        flex: 0 0 auto;
+        width: 100%;
+        min-height: auto;
+        height: auto;
+        overflow: visible;
+        padding: 35px 24px;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 460px;
+        margin: 0 auto;
+    }
+}
